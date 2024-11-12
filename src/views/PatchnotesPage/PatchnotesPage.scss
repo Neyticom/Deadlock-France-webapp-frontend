@@ -1,0 +1,25 @@
+.patchnotes-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.patchnotes-page_content{
+    display: flex;
+    justify-content: flex-start;
+    padding-inline: 200px;
+    overflow-y: hidden;
+}
+
+.patchnotes-page_title {
+    margin-left: 610px;
+    display: flex;
+    justify-content: left;
+    padding-left: 180px;
+    margin-bottom: 50px;
+    white-space: nowrap;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+}

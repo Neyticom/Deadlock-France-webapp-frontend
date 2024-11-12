@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Troika';
+  src: url('./assets/fonts/Colus-Regular.woff') format('opentype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Akatab:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Troika', Arial, sans-serif;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+}

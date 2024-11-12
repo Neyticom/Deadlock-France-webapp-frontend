@@ -1,0 +1,95 @@
+.patchnotes-reader_content{
+
+    &>* {
+        margin-block: 8px 9px;
+    }
+
+    h1, h2, h3, h4, strong{
+        font-weight: 900;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin-block: 18px 19px;
+    }
+
+    h2 {
+        font-size: 17px;
+        margin-block: 17px 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+        margin-block: 16px 17px;
+    }
+    
+    h4 {
+        font-size: 15px;
+        margin-block: 15px 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    ul, ol {
+        list-style-position: inside;
+        margin-block: 14px 17px;
+    }
+
+    li {
+        font-size: 14px;
+        margin-block: 2px 3px;
+    }
+    
+    li::marker {
+        font-size: 12px;
+    }
+
+    blockquote {
+
+        p {
+            display: inline;
+            font-style: italic;
+        }
+
+        &::before {
+            content: '“';
+        }
+
+        &::after {
+            content: '”';
+        }
+    }
+
+    pre {
+        background-color: #333333aa;
+        padding: 10px 12px;
+        border-radius: 5px;
+    }
+
+    p code {
+        background-color: #333333aa;
+        padding: 6px 12px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    a {
+        color: #47CF73;
+        font-weight: 900;
+    }
+
+    a:hover {
+        color: #2c7f46;
+    }
+
+}

@@ -1,0 +1,17 @@
+.patchnotes-reader{
+    display: flex;
+    padding-left: 60px;
+}
+
+.patchnote_title{
+}
+
+.patchnotes-reader_content{
+    font-family: 'Akatab';
+    overflow-y: scroll;
+    margin-right: 150px;
+    padding-left: 65px;
+    text-align: left;
+    scrollbar-width: none;
+    user-select: text;
+}

@@ -1,0 +1,76 @@
+.patchnotes-selector {
+    display: flex;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.patchnotes-selector_list {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    cursor: pointer;
+}
+
+.patchnotes-selector_option,
+.patchnotes-selector_active-option {
+    font-weight: 400;
+    letter-spacing: 1.82px;
+    padding-block: 17px;
+    font-size: 14px;
+    padding-inline: 100px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.patchnotes-selector_option-separator {
+    height: 2px;
+    width: 95px;
+    background-color: #ffffff;
+    display: inline-block;
+    margin-inline: auto;
+}
+
+.patchnotes-selector_option:hover::before,
+.patchnotes-selector_option:hover::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.patchnotes-selector_option:hover::before {
+    left: 78px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.patchnotes-selector_option:hover::after {
+    right: 78px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.patchnotes-selector_active-option::before,
+.patchnotes-selector_active-option::after {
+    content: '';
+    width: 1px;
+    height: 1px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 12px solid #ffffff;
+    background-color: transparent;
+    position: absolute;
+}
+
+.patchnotes-selector_active-option::before {
+    left: 80px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.patchnotes-selector_active-option::after {
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+}

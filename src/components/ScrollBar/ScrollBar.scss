@@ -1,0 +1,36 @@
+.custom-scrollbar {
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-block: 8px;
+
+    &.custom-scrollbar-size-1 {
+        width: 2px;
+    }
+
+    &.custom-scrollbar-size-2 {
+        width: 4px;
+    }
+
+    .custom-scrollbar-thumb {
+        position: relative;
+        background-color: #ffffff;
+        cursor: grab;
+        transition: background-color 0.3s ease;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+
+        &.custom-scrollbar-thumb-size-1 {
+            width: 10px;
+            height: 10px;
+        }
+    
+        &.custom-scrollbar-thumb-size-2 {
+            width: 15px;
+            height: 15px;
+        }
+
+        &:hover {
+            background-color: #aabbcc;
+        }
+  }
+}
