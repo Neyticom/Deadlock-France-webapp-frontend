@@ -4,6 +4,9 @@ import { Remark } from "react-remark";
 import ScrollBar from "../ScrollBar/ScrollBar";
 import './PatchnotesReader.scss';
 import './Markdown.scss';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+
 
 
 interface PatchnotesReaderProps {
