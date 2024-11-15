@@ -1,7 +1,7 @@
 {
   "name": "deadlock-front",
-  "private": true,
   "version": "0.0.0",
+  "description": "Deadlock front",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -28,5 +28,16 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neyticom/Deadlock-France-webapp-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neyticom/Deadlock-France-webapp-frontend/issues"
+  },
+  "homepage": "https://github.com/Neyticom/Deadlock-France-webapp-frontend#readme"
 }
