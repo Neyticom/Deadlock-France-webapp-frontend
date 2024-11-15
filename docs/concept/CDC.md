@@ -38,7 +38,7 @@ Deadlock est un jeu vidéo multijoueur, comme d'autres jeu du même style il com
 
 ### Évolutions
 
-> *à compléter une fois le MVP terminé*
+> *TODO : à compléter une fois le MVP terminé*
 
 ## 3 - Contraintes techniques
 
@@ -66,7 +66,7 @@ L'accès à l'espace administrateur se fait par une connexion avec Login + Passw
 
 Session administrateur avec l'utilisation du token JWT (stockage cookie).
 
-(**durée de vie du token à définir**)
+> *TODO : durée de vie du token à définir*
 
 ### Compatibilité
 
