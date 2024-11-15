@@ -2,7 +2,7 @@
 
 ## 1 - Description du projet
 
-Application Web desktop et mobile pour la communauté Deadlock France, pour centraliser l'information et engager la communauté.
+Deadlock est un jeu vidéo multijoueur, comme d'autres jeu du même style il comporte un fort aspect communautaire. Deadlock France s'inscrit dans ce contexte afin d'engager la communauté francophone du jeu et de centraliser l'information liée à ce dernier. Deadlock France est une Application Web desktop et mobile.
 
 ### Objectifs (MVP)
 
@@ -97,4 +97,4 @@ Trello nous servira d'outil pour backloguer et organiser les sprints, les rôles
 
 Une réunion hebdomadaire permet d'échanger sur les problématiques rencontrées, de faire le point sur l'avancement et de faire des ajustements si besoin.
 
-Le **[journal de bord](./devlog.md)** permet de résumer le déroulement de l'ensemble des sprints du projet.
+Le **[journal de bord](../devlog.md)** permet de résumer le déroulement de l'ensemble des sprints du projet.
