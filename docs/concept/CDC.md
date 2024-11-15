@@ -2,7 +2,7 @@
 
 ## 1 - Description du projet
 
-Application Web desktop et mobile pour la communauté Deadlock France, pour centraliser l'information et engager la communauté.
+Deadlock est un jeu vidéo multijoueur, comme d'autres jeu du même style il comporte un fort aspect communautaire. Deadlock France s'inscrit dans ce contexte afin d'engager la communauté francophone du jeu et de centraliser l'information liée à ce dernier. Deadlock France est une Application Web desktop et mobile.
 
 ### Objectifs (MVP)
 
