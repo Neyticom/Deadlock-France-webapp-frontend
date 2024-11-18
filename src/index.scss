@@ -1,17 +1,4 @@
-@font-face {
-  font-family: 'Troika';
-  src: url('./assets/fonts/troika.otf') format('opentype');
-};
-
-@font-face {
-  font-family: 'Geist';
-  src: url('/home/student/Deadlock-France-webapp-frontend/src/assets/fonts/Geist[wght].woff2')
-  format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-};
-
-@import url('https://fonts.googleapis.com/css2?family=Akatab:wght@400;500;600;700;800;900&display=swap');
+@use './assets/fonts/fonts.scss';
 
 * {
   margin: 0;
