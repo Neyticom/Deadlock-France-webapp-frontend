@@ -6,6 +6,9 @@ import './PatchnotesReader.scss';
 import './Markdown.scss';
 
 
+
+
+
 interface PatchnotesReaderProps {
     patchnote: IPatchnote;
 }
