@@ -5,6 +5,18 @@
     justify-content: space-between;
 }
 
+#patchnotes-link {
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 2px solid transparent; /* Ligne invisible par défaut */
+    padding-bottom: 2px; /* Contrôle de l'espacement */
+    transition: border-color 0.2s ease-in-out;
+}
+
+#patchnotes-link:hover {
+    border-bottom: 2px solid #ffffff; /* Ligne visible au survol */
+}
+
 .homepage-main {
     display: flex;
     flex-direction: column;
@@ -14,10 +26,7 @@
     text-align: center;
 }
 
-.logo {
-    width: 5.2rem;
-    margin-bottom: 1.7rem;
-}
+
 
 .main-title {
     color: #ffffff;
@@ -28,8 +37,4 @@
     font-weight: 500;
     letter-spacing: 0.1rem;
     margin-bottom: 7.6rem;
-}
-
-.main-title_top,.main-title_bottom {
-    display: block;
 }
