@@ -6,6 +6,7 @@ import Logo from '/src/assets/icons/logo.png';
 import DiscordIcon from '/src/assets/icons/discord.svg';
 import XIcon from '/src/assets/icons/twitter-alt.svg';
 
+
 const Header: React.FC = () => {
 
     const [activePage, setActivePage] = useState(window.location.pathname);
@@ -18,10 +19,18 @@ const Header: React.FC = () => {
 
     return (
         <header className="header">
+            
             <nav className="nav">
+            
                 <ul className="nav-list">
-                    <li>
-                        <Link to="/" onClick={changePage} className='nav-link'><img src={Logo} alt="Logo Deadlock France" className={activePage === '/' ? 'hidden header-logo' : 'header-logo'} /></Link>
+                    
+                {/* <img src={Logo} alt="Logo Deadlock France" className="logo" /> */}
+                <li>
+                        <Link to="/" onClick={changePage} className='nav-link'>
+                            <div className='logo-container'><img src={Logo} alt="Logo Deadlock France" className={activePage === '/' ? 'hidden header-logo' : 'header-logo'} />
+                            <span className='logo-title'>Deadlock France</span>
+                            </div>
+                            </Link>
                     </li>
                     <li>
                         <Link to="/" onClick={changePage} className={activePage === '/' ? 'active nav-link' : 'nav-link'}>Accueil</Link>
