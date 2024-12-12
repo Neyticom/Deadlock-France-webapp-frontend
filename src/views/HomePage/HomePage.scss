@@ -5,17 +5,7 @@
     justify-content: space-between;
 }
 
-#patchnotes-link {
-    text-decoration: none;
-    color: #ffffff;
-    border-bottom: 2px solid transparent; /* Ligne invisible par défaut */
-    padding-bottom: 2px; /* Contrôle de l'espacement */
-    transition: border-color 0.2s ease-in-out;
-}
 
-#patchnotes-link:hover {
-    border-bottom: 2px solid #ffffff; /* Ligne visible au survol */
-}
 
 .homepage-main {
     display: flex;
@@ -37,4 +27,114 @@
     font-weight: 500;
     letter-spacing: 0.1rem;
     margin-bottom: 7.6rem;
+}
+
+.news-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    flex-direction: column;
+    position: relative;
+}
+
+.news-grid {
+    display: flex;
+    gap: 2rem;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.patchnote-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 31.25rem;
+    height: 17.563rem;
+    border-radius: 8px;
+    border: 0.063rem solid #fff;
+    overflow: hidden;
+
+}
+
+.patchnote-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.patchnote-card .patchnote-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    color: #fff;
+    padding: 0.5rem; /* Espacement autour du texte */
+    font-size: 1.2rem; /* Taille du texte */
+    font-weight: bold;
+    text-align: center; /* Centrer le texte */
+}
+
+#patchnotes-link {
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 2px solid transparent; 
+    padding-bottom: 2px; 
+    transition: border-color 0.2s ease-in-out;
+    align-self: flex-end;
+    margin-top: 2rem;
+}
+
+#patchnotes-link:hover {
+    border-bottom: 2px solid #ffffff; 
+}
+
+@media (max-width:1024px) {
+    .homepage-container {
+        height: auto; /* Permet à la hauteur de s'ajuster au contenu */
+        padding-inline: 1rem; /* Ajoute un peu d'espace sur les côtés */
+        overflow: hidden; /* Supprime tout débordement */
+    }
+
+    .homepage-main {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .main-title {
+        font-size: 2rem;  /* Réduction de la taille du titre */
+        margin-bottom: 1rem; /* Ajuster l'espacement sous le titre */
+    }
+
+    .news-container {
+        width: 90%; /* Assure une largeur adaptée */
+        margin: 0 auto; /* Centre horizontalement */
+    }
+
+    .news-grid {
+        flex-wrap: nowrap; /* Permet de plier les vignettes */
+        gap: 1rem; /* Espace entre les vignettes */
+        justify-content: center; /* Centre les vignettes horizontalement */
+        // align-items: center;
+    }
+
+    .patchnote-card {
+        position: relative;
+        width: calc(90 / 3);
+        max-width: 300px;
+        height: auto;
+    }
+
+    .patchnote-card img {
+        width: 100%;  /* Images s'adaptent à la largeur de leur conteneur */
+        height: auto;  /* Maintenir l'aspect de l'image */
+    }
+
+    #patchnotes-link {
+        font-size: 1.2rem;  /* Réduire la taille de la police du lien */
+        align-self: center;  /* Centrer le lien en bas sur les tablettes */
+        margin-top: 2rem;  /* Ajouter un espacement au-dessus du lien */
+    }
+
 }
