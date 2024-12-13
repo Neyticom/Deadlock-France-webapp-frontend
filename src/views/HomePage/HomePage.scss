@@ -121,7 +121,6 @@
 
     .patchnote-card {
         position: relative;
-        width: calc(90 / 3);
         max-width: 300px;
         height: auto;
     }
@@ -136,5 +135,25 @@
         align-self: center;  /* Centrer le lien en bas sur les tablettes */
         margin-top: 2rem;  /* Ajouter un espacement au-dessus du lien */
     }
+
+}
+
+@media (max-width: 768px) {
+    .homepage-container {
+        height: auto;
+    }
+
+    .patchnote-card {
+        position: relative;
+        max-width: 200px;
+        min-height: 122px;
+    }
+
+    .patchnote-card .patchnote-title{
+        padding: 0;
+    }
+
+    
+
 
 }

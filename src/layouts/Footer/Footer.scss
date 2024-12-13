@@ -11,3 +11,9 @@
         padding-inline: 3,4rem;
     }
 }
+
+@media (max-width: 768px) {
+    .donate-button {
+        padding: 0.5rem;
+    }
+}

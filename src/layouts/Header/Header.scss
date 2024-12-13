@@ -90,7 +90,7 @@
 
     /* Réduction de l'espace entre les éléments de navigation */
     .nav .nav-list {
-        gap: 2.5rem; /* Moins d'espace entre les liens de navigation */
+        gap: 0.5rem
     }
 
     /* Réduction de la taille de la police des liens */
@@ -125,11 +125,11 @@
     /* Ajustement de la disposition des éléments sur les très petites tablettes */
     .header {
         padding-inline: 1.5rem; /* Réduction des marges */
+        padding-bottom: 1rem;
     }
 
     /* Disposition des éléments de navigation : Empilement vertical */
     .nav .nav-list {
-        flex-direction: column; /* Empiler les éléments de navigation */
         gap: 1.5rem; /* Espacement réduit */
         text-align: center; /* Centrer les liens de navigation */
     }
@@ -142,6 +142,7 @@
     /* Taille du logo */
     .header-logo {
         width: 2.5rem; /* Plus petit logo pour les petites tablettes */
+        margin-top: 1rem;
     }
 
     /* Modification de la taille du titre du logo */
