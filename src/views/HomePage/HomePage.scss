@@ -54,6 +54,7 @@
     border-radius: 8px;
     border: 0.063rem solid #fff;
     overflow: hidden;
+    object-fit: cover;
 
 }
 
@@ -145,8 +146,8 @@
 
     .patchnote-card {
         position: relative;
-        max-width: 200px;
-        min-height: 122px;
+        max-width: 12.5rem;
+        min-height: 7.625rem;
     }
 
     .patchnote-card .patchnote-title{
@@ -156,4 +157,34 @@
     
 
 
+}
+
+@media (max-width:576px) {
+    .news-grid {
+        min-width: 100vw;
+        display: flex; /* Alignement horizontal des cartes */
+        justify-content: space-around;
+        flex-wrap: nowrap; /* Empêche l'élément de passer à la ligne suivante */
+        overflow-x: scroll; /* Activer le défilement horizontal */
+        gap: 1rem; /* Espacement entre les éléments */
+        // scroll-snap-type: x mandatory; /* Activation du snap horizontal */
+        scroll-padding-left: 0;
+        padding-left: 1rem; /* Espacement à gauche pour ne pas coller à la bordure */
+        width: 100%; /* Assurez-vous que le conteneur occupe toute la largeur disponible */
+        box-sizing: border-box; /* Pour inclure les bordures et paddings dans la largeur totale */
+    }
+
+    .patchnote-card {
+        flex: 0 0 auto; /* Assurez-vous que les éléments sont de taille fixe */
+        width: 100%; /* Ajustez la largeur des cartes à 80% de la largeur du conteneur */
+        max-width: 12.5rem; /* Limite la largeur maximale des cartes */
+        min-width: 12.5rem; /* Limite la largeur minimale des cartes */
+        min-height: 7.625rem;
+        scroll-snap-align: center; /* Centrage des éléments dans le défilement */
+    }
+
+    .patchnote-card img {
+        width: 100%;  /* Adapter les images à la largeur du conteneur */
+        height: auto;  /* Maintenir le ratio de l'image */
+    }
 }

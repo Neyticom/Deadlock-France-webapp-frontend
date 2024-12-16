@@ -5,6 +5,26 @@
     left: 0;
     width: 100%;
     position: relative;
+}
+    .nav-desktop {
+        .nav-list {
+            display: flex;
+            gap: 4.563rem;
+            align-items: center;
+            justify-content: space-between;
+
+            .nav-link {
+                color: #ffffff;
+                position: relative;
+                font-size: 20px;
+                font-weight: 400;
+                letter-spacing: 0.05rem;
+                display: flex;
+                &:hover{
+                    color: #47CF73;
+                }
+            }
+    }
 
     .nav {
         .nav-list {

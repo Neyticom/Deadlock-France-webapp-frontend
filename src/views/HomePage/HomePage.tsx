@@ -34,9 +34,8 @@ const HomePage: React.FC = () => {
             {isMobile ? (
             /* --- Structure Mobile --- */
                     <>
-                        <div className="mobile-header">
-                            <h1 className="main-title">Dernières mises à jour</h1>
-                        </div>
+                        <h1 className="main-title">Dernières mises à jour</h1>
+                        
 
                         <div className="news-container">
                             <div className="news-grid mobile-scrollable">
