@@ -25,3 +25,44 @@
         padding: 0.5rem;
     }
 }
+
+@media (max-width: 576px) {
+    .footer {
+        width: 100%;
+        padding: 0;
+        padding-inline: 0;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .nav-mobile-footer {
+        width: 100%;
+    }
+
+    .nav-list-mobile {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .nav-list-mobile li {
+        width: 100%;
+        margin: 0;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-link-mobile {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centre l'icône et le texte verticalement */
+        text-decoration: none; /* Enlève le soulignement des liens */
+        text-align: center; /* Centre le texte horizontalement */
+        padding: 0.5rem 0; /* Ajuste l'espacement vertical */
+    }
+    
+}
