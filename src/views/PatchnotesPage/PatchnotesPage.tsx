@@ -27,7 +27,7 @@ const PatchnotesPage = () => {
         <div className="patchnotes-page">
             <Header />
             {selectedPatchnote ? (
-                <h1 className='patchnotes-page_title'>{lastestPatchnote === activePatchnote ? "Dernière Patchnote - " + selectedPatchnote.date : "Patchnote du " + selectedPatchnote.date }</h1>
+                <h1 className='patchnotes-page_title'>{lastestPatchnote === activePatchnote ? `Dernière Patchnote - ${selectedPatchnote.date}` : `Patchnote du ${selectedPatchnote.date}` }</h1>
             ) : null}
             <main className='patchnotes-page_content'>
                 <PatchnotesSelector patchnotes={patchnotes} activePatchnote={activePatchnote} handleSelectedPatchnote={handleSelectedPatchnote}/>

@@ -1,18 +1,21 @@
 .patchnotes-selector {
+    overflow-x: auto;
     display: flex;
-    position: relative;
-    margin-bottom: 50px;
     flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+    width: 100%;
 }
 
 .patchnotes-selector_list {
     display: flex;
-    overflow-x: scroll;
-    scrollbar-width: none;
-    white-space: nowrap;
-    cursor: pointer;
-    padding: 0.625rem 0;
-    gap: 1.25rem;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    overflow-x: scroll; /* Scroll horizontal activé uniquement ici */
+    overflow-y: hidden; /* Pas de scroll vertical */
+    gap: 1rem;
+    padding: 10px;
+    width: 100%;
 }
 
 .patchnotes-selector_option,
@@ -70,9 +73,9 @@
 }
 
 /* Cacher les scrollbars natives */
-.patchnotes-selector_list::-webkit-scrollbar {
-    display: none;
-}
+// .patchnotes-selector_list::-webkit-scrollbar {
+//     display: none;
+// }
 
 // .patchnotes-selector_option-separator {
 //     height: 2px;

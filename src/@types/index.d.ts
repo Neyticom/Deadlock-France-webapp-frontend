@@ -4,5 +4,5 @@ export interface IPatchnote {
     date: string,
     title: string,
     content: string,
-    image: string;
+    image?: string;
 }

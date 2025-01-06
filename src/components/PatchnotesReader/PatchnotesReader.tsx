@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { IPatchnote } from "../../@types";
+import type { IPatchnote } from "../../@types";
 import { Remark } from "react-remark";
 import ScrollBar from "../ScrollBar/ScrollBar";
 import './PatchnotesReader.scss';
@@ -32,7 +32,8 @@ export const PatchnotesReader = ({patchnote}: PatchnotesReaderProps) => {
     };
 
     // Permet d'appeller la fonction syncScrollBar au scroll sur la fenêtre navigable
-    useEffect(() => {
+    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+        useEffect(() => {
 
         if (divRef.current) {
             divRef.current.addEventListener('scroll', syncScrollBar);
@@ -60,6 +61,7 @@ export const PatchnotesReader = ({patchnote}: PatchnotesReaderProps) => {
             <div className="patchnotes-reader">
                 <ScrollBar size={2} onScroll={handleScroll} scrollPosition={scrollPosition} />
                 <div ref={divRef} className="patchnotes-reader_content">
+                    {/* biome-ignore lint/style/useTemplate: <explanation> */}
                     <h2 className="patchnote_title">{"Patchnote v" + patchnote.version + ' - "' + patchnote.title + '"'}</h2>
                     <Remark>{patchnote.content}</Remark>
                 </div>

@@ -2,24 +2,27 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.25rem;
+    color: #fff;
+    overflow: hidden;
 }
 
 .patchnotes-page_content{
+    width: 100%;
+    max-width: 1200px; /* Largeur maximale de la zone de contenu */
     display: flex;
-    justify-content: center;
-    padding-inline: 200px;
-    overflow-y: hidden;
+    flex-direction: column; /* Empile les composants (selector et reader) verticalement */
+    align-items: center;
+    gap: 20px; /* Espacement entre les sections */
 }
 
 .patchnotes-page_title {
-    margin-left: 0;
-    display: flex;
-    justify-content: center;
-    padding-left: 0;
-    margin-bottom: 50px;
-    white-space: nowrap;
-    letter-spacing: 0.1rem;
+    font-size: 2rem;
     font-weight: 500;
-    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    margin-bottom: 20px; /* Espacement avec la liste */
+    white-space: nowrap; /* Empêche le texte de se couper */
 }

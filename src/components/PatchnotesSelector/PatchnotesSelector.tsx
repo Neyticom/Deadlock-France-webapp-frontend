@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import ScrollBar from '../ScrollBar/ScrollBar';
 import './PatchnotesSelector.scss';
 import type { IPatchnote } from '../../@types';
-
 interface PatchnotesSelectorProps {
     patchnotes: IPatchnote[];
     activePatchnote: number | null;

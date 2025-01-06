@@ -241,8 +241,9 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Correction des problèmes de collision sur la carte "Terres Dévastées".
-`
-},
+`,
+image:'src/assets/images/deadlock-test-patch-10.jpg'
+}, 
 {
     id: 12,
     version: '2.2.0',
@@ -262,7 +263,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Problème résolu avec les animations des invocations de Lupin.
-`
+`,
+image:'src/assets/images/deadlock-test-patch-10.jpg'
 },
 {
     id: 13,
@@ -283,7 +285,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Problème résolu avec les effets de gel ne s’affichant pas correctement sur les ennemis.
-`
+`,
+image:'src/assets/images/deadlock-test-patch-10.jpg'
 },
 {
     id: 14,
@@ -304,7 +307,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Correction des effets sonores manquants lors des tempêtes de sable.
-`
+`,
+image:'src/assets/images/deadlock-test-patch-10.jpg'
 },
 {
     id: 15,
@@ -325,7 +329,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Correction des effets visuels des vagues lors de l'utilisation de l'ultime de Tidal.
-`
+`,
+image:'src/assets/images/deadlock-test-patch-10.jpg'
 },
 {
     id: 16,
@@ -346,7 +351,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Résolution des problèmes d'effets visuels lors de l'invocation de tornades.
-`
+`,
+image:'src/assets/images/deadlock-test-patch-10.jpg'
 },
 {
     id: 17,
@@ -367,7 +373,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Résolution de problèmes de textures manquantes sur les boucliers cosmiques.
-`
+`,
+image:'src/assets/images/deadlock-test-patch-10.jpg'
 },
 {
     id: 18,
@@ -388,7 +395,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Correction des problèmes de synchronisation des pièges activés dans le mode Ruines Anciennes.
-`
+`,
+image:'src/assets/images/deadlock-test-patch-10.jpg'
 },
 {
     id: 19,
@@ -409,7 +417,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Résolution des problèmes de visibilité des attaques dans les zones sombres.
-`
+`,
+image:'src/assets/images/deadlock-test-patch-10.jpg'
 },
 {
     id: 20,
@@ -430,7 +439,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Résolution des problèmes d'animation lors des coups critiques infligés aux colosses.
-`
+`,
+image:'src/assets/images/deadlock-test-patch-10.jpg'
 },
 {
     id: 22,
@@ -493,6 +503,7 @@ Texte avec **hyperlien** : [Clique ici](https://example.com).
 
 Terminer avec un saut de ligne...  
 ...comme ceci.
-`
+`,
+image:'src/assets/images/deadlock-test-patch-10.jpg'
 }
 ];
