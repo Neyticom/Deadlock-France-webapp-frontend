@@ -180,3 +180,13 @@
         width: 1.8rem; /* Icônes encore plus petites */
     }
 }
+
+@media (max-width: 576px) {
+    .nav-list {
+        display: flex;
+    }
+
+    .social-medias {
+        align-items: center;
+    }
+}

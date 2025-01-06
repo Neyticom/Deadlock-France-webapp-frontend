@@ -3,5 +3,6 @@ export interface IPatchnote {
     version: string,
     date: string,
     title: string,
-    content: string
+    content: string,
+    image: string;
 }

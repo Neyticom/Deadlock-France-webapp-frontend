@@ -2,75 +2,128 @@
     display: flex;
     position: relative;
     margin-bottom: 50px;
+    flex-direction: column;
 }
 
 .patchnotes-selector_list {
-    overflow-y: scroll;
+    display: flex;
+    overflow-x: scroll;
     scrollbar-width: none;
+    white-space: nowrap;
     cursor: pointer;
+    padding: 0.625rem 0;
+    gap: 1.25rem;
 }
 
 .patchnotes-selector_option,
 .patchnotes-selector_active-option {
+    display: inline-block;
     font-weight: 400;
     letter-spacing: 1.82px;
-    padding-block: 17px;
+    text-align: center;
+    // padding-block: 17px;
     font-size: 14px;
-    padding-inline: 100px;
+    // padding-inline: 100px;
     position: relative;
-    white-space: nowrap;
+    white-space: normal;
+    padding: 0.625rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease;;
 }
 
-.patchnotes-selector_option-separator {
-    height: 2px;
-    width: 95px;
-    background-color: #ffffff;
-    display: inline-block;
-    margin-inline: auto;
+.patchnotes-selector_option:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
 }
 
-.patchnotes-selector_option:hover::before,
-.patchnotes-selector_option:hover::after {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: white;
-    border-radius: 50%;
+.patchnotes-selector_image {
+    width: 100px; /* Taille des images */
+    height: 100px;
+    object-fit: cover; /* Coupe ou adapte les images pour bien remplir le cadre */
+    border-radius: 8px; /* Bords arrondis pour les images */
+    margin-bottom: 10px; /* Espacement avec le texte en dessous */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre portée pour le design */
 }
 
-.patchnotes-selector_option:hover::before {
-    left: 78px;
-    top: 50%;
-    transform: translateY(-50%);
+.patchnotes-selector_info {
+    text-align: center; /* Centre les textes sous les images */
 }
 
-.patchnotes-selector_option:hover::after {
-    right: 78px;
-    top: 50%;
-    transform: translateY(-50%);
+.patchnotes-selector_version {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.patchnotes-selector_date {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.patchnotes-selector_active-option {
+    background-color: rgba(255, 255, 255, 0.2); /* Surligne l'option active */
+    border: 2px solid #ffffff;
 }
 
 .patchnotes-selector_active-option::before,
 .patchnotes-selector_active-option::after {
-    content: '';
-    width: 1px;
-    height: 1px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 12px solid #ffffff;
-    background-color: transparent;
-    position: absolute;
+    display: none; /* Suppression des flèches pour l'option active */
 }
 
-.patchnotes-selector_active-option::before {
-    left: 80px;
-    top: 50%;
-    transform: translateY(-50%) rotate(90deg);
+/* Cacher les scrollbars natives */
+.patchnotes-selector_list::-webkit-scrollbar {
+    display: none;
 }
 
-.patchnotes-selector_active-option::after {
-    right: 80px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-90deg);
-}
+// .patchnotes-selector_option-separator {
+//     height: 2px;
+//     width: 95px;
+//     background-color: #ffffff;
+//     display: inline-block;
+//     margin-inline: auto;
+// }
+
+// .patchnotes-selector_option:hover::before,
+// .patchnotes-selector_option:hover::after {
+//     content: '';
+//     position: absolute;
+//     width: 8px;
+//     height: 8px;
+//     background-color: white;
+//     border-radius: 50%;
+// }
+
+// .patchnotes-selector_option:hover::before {
+//     left: 78px;
+//     top: 50%;
+//     transform: translateY(-50%);
+// }
+
+// .patchnotes-selector_option:hover::after {
+//     right: 78px;
+//     top: 50%;
+//     transform: translateY(-50%);
+// }
+
+// .patchnotes-selector_active-option::before,
+// .patchnotes-selector_active-option::after {
+//     content: '';
+//     width: 1px;
+//     height: 1px;
+//     border-left: 6px solid transparent;
+//     border-right: 6px solid transparent;
+//     border-bottom: 12px solid #ffffff;
+//     background-color: transparent;
+//     position: absolute;
+// }
+
+// .patchnotes-selector_active-option::before {
+//     left: 80px;
+//     top: 50%;
+//     transform: translateY(-50%) rotate(90deg);
+// }
+
+// .patchnotes-selector_active-option::after {
+//     right: 80px;
+//     top: 50%;
+//     transform: translateY(-50%) rotate(-90deg);
+// }

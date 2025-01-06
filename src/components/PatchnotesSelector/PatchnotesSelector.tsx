@@ -19,18 +19,19 @@ function PatchnotesSelector ({patchnotes, activePatchnote, handleSelectedPatchno
     // Synchronise la position de la scrollbar avec la position de la fenêtre navigable
     const syncScrollBar = () => {
         if (listRef.current) {
-            const maxScrollTop = listRef.current.scrollHeight - listRef.current.clientHeight;
+            const maxScrollLeft = listRef.current.scrollWidth - listRef.current.clientWidth;
             // Taille de la fenêtre navigable en pixel
-            const scrollTop = listRef.current.scrollTop;
+            const scrollLeft = listRef.current.scrollLeft;
             // Distance du scroll par rapport la fenêtre en pixel
-            const newScrollPosition = (scrollTop / maxScrollTop) * 100;
+            const newScrollPosition = (scrollLeft / maxScrollLeft) * 100;
             // Position du scroll en %
             setScrollPosition(newScrollPosition);
         }
     };
 
     // Permet d'appeller la fonction syncScrollBar au scroll sur la fenêtre navigable
-    useEffect(() => {
+    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+        useEffect(() => {
 
         if (listRef.current) {
             listRef.current.addEventListener('scroll', syncScrollBar);
@@ -58,11 +59,26 @@ function PatchnotesSelector ({patchnotes, activePatchnote, handleSelectedPatchno
         <div className="patchnotes-selector">
             <ul ref={listRef} className='patchnotes-selector_list'>
                 {patchnotes.map(patchnote => (
-                    <>
-                        <li onClick={() => handleSelectedPatchnote(patchnote.id)} className={patchnote.id === activePatchnote ? 'patchnotes-selector_active-option' : 'patchnotes-selector_option' } data-patchnote-id={patchnote.id}>{"v" + patchnote.version + " - " + patchnote.date}</li>
-                        <span className='patchnotes-selector_option-separator'></span>
-                    </>
-                ))}
+                    
+                    // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+<li 
+                    key={patchnote.id}
+                    onClick={() => handleSelectedPatchnote(patchnote.id)}
+                    className={patchnote.id === activePatchnote ? 'patchnotes-selector_active-option' : 'patchnotes-selector_option'} 
+                    data-patchnote-id={patchnote.id}
+                >
+                    <img 
+                        src={patchnote.image} 
+                        alt={`Patchnote ${patchnote.version}`} 
+                        className='patchnotes-selector_image' 
+                    />
+                    <div className='patchnotes-selector_info'>
+                        {/* biome-ignore lint/style/useTemplate: <explanation> */}
+                        <span className='patchnotes-selector_version'>{"v" + patchnote.version}</span>
+                        <span className='patchnotes-selector_date'>{patchnote.date}</span>
+                    </div>
+                </li>
+            ))}
             </ul>
             <ScrollBar size={1} onScroll={handleScroll} scrollPosition={scrollPosition} />
         </div>

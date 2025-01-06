@@ -38,6 +38,8 @@ const PatchnotesPage = () => {
             <Footer />
         </div>
     );
+
+    
 };
 
 export default PatchnotesPage;

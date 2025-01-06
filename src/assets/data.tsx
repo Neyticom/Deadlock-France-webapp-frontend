@@ -88,7 +88,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Problème de synchronisation des animations lors des combos de héros corrigé.
-`
+`,
+    image:'src/assets/images/deadlock-test-patch-4.jpg'
 },
 {
     id: 5,
@@ -109,7 +110,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Problème résolu avec la hitbox de l'arme de Noctis.
-`
+`,
+    image:'src/assets/images/deadlock-test-patch-5.jpg'
 },{
     id: 6,
     version: '2.2.6',
@@ -129,7 +131,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Problème de collision des murs sur la carte "Cratère Magmatique" corrigé.
-`
+`,
+    image:'src/assets/images/deadlock-test-patch-6.jpg'
 },
 {
     id: 7,
@@ -150,7 +153,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Correction de l’effet visuel manquant dans l'attaque ultime de Chronos.
-`
+`,
+    image:'src/assets/images/deadlock-test-patch-7.jpg'
 },
 {
     id: 8,
@@ -171,7 +175,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Correction des problèmes de performance sur la carte "Forêt des Anciens".
-`
+`,
+    image:'src/assets/images/deadlock-test-patch-8.jpg'
 },
 {
     id: 9,
@@ -192,7 +197,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Correction des bugs d'affichage sur les effets de particules de l'attaque "Tempête Foudroyante".
-`
+`,
+    image:'src/assets/images/deadlock-test-patch-9.jpg'
 },
 {
     id: 10,
@@ -213,7 +219,8 @@ sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe dr
 
 **Corrections de bugs :**
 - Correction des effets visuels qui persistaient après la mort d'Aerion.
-`
+`,
+    image:'src/assets/images/deadlock-test-patch-10.jpg'
 },
 {
     id: 11,

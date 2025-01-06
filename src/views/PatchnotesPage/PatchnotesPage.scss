@@ -7,16 +7,16 @@
 
 .patchnotes-page_content{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     padding-inline: 200px;
     overflow-y: hidden;
 }
 
 .patchnotes-page_title {
-    margin-left: 610px;
+    margin-left: 0;
     display: flex;
-    justify-content: left;
-    padding-left: 180px;
+    justify-content: center;
+    padding-left: 0;
     margin-bottom: 50px;
     white-space: nowrap;
     letter-spacing: 0.1rem;
