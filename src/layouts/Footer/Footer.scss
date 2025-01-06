@@ -1,16 +1,21 @@
 .footer-desktop {
+    width: 100%;
     padding-block: 2.813rem;
-    padding-inline: 3,4rem;
+    padding-inline: 3.4rem;
     margin-right: 2rem;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: flex-end;
+    box-sizing: border-box;
 }
 
 .footer {
+    width: 100% ;
     padding-block: 2.813rem;
     padding-inline: 3,4rem;
     display: flex;
     justify-content: flex-end;
+    box-sizing: border-box;
 }
 
 @media (max-width: 1024px) {

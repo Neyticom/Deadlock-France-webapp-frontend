@@ -1,13 +1,13 @@
 .patchnotes-reader{
     width: 100%;
     display: flex;
-    padding-left: 60px;
+    justify-content: center;
 }
 
 
 
 .patchnotes-reader_content{
-    width: 100%;
+    width: 80%;
     font-family: 'Akatab';
     overflow-y: scroll;
     // margin-right: 150px;
@@ -15,4 +15,9 @@
     text-align: left;
     scrollbar-width: none;
     user-select: text;
+    justify-content: center;
+}
+
+.patchnotes-reader_content li {
+    font-size: 25px;
 }
