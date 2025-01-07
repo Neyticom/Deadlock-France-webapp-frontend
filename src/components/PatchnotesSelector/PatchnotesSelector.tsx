@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import ScrollBar from '../ScrollBar/ScrollBar';
+import { useRef } from 'react';
+// import ScrollBar from '../ScrollBar/ScrollBar';
 import './PatchnotesSelector.scss';
 import type { IPatchnote } from '../../@types';
 interface PatchnotesSelectorProps {
@@ -10,49 +10,48 @@ interface PatchnotesSelectorProps {
 
 function PatchnotesSelector ({patchnotes, activePatchnote, handleSelectedPatchnote}: PatchnotesSelectorProps) {
 
-    const [scrollPosition, setScrollPosition] = useState(0);
+    // const [scrollPosition, setScrollPosition] = useState(0);
     // Permet de récupérer et modifier l'état du scroll en % entre 0 et 100;
 
     const listRef = useRef<HTMLUListElement>(null);
 
     // Synchronise la position de la scrollbar avec la position de la fenêtre navigable
-    const syncScrollBar = () => {
-        if (listRef.current) {
-            const maxScrollLeft = listRef.current.scrollWidth - listRef.current.clientWidth;
-            // Taille de la fenêtre navigable en pixel
-            const scrollLeft = listRef.current.scrollLeft;
-            // Distance du scroll par rapport la fenêtre en pixel
-            const newScrollPosition = (scrollLeft / maxScrollLeft) * 100;
-            // Position du scroll en %
-            setScrollPosition(newScrollPosition);
-        }
-    };
+    // const syncScrollBar = () => {
+    //     if (listRef.current) {
+    //         const maxScrollLeft = listRef.current.scrollWidth - listRef.current.clientWidth;
+    //         // Taille de la fenêtre navigable en pixel
+    //         const scrollLeft = listRef.current.scrollLeft;
+    //         // Distance du scroll par rapport la fenêtre en pixel
+    //         const newScrollPosition = (scrollLeft / maxScrollLeft) * 100;
+    //         // Position du scroll en %
+    //         setScrollPosition(newScrollPosition);
+    //     }
+    // };
 
     // Permet d'appeller la fonction syncScrollBar au scroll sur la fenêtre navigable
-    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-        useEffect(() => {
+    //     useEffect(() => {
 
-        if (listRef.current) {
-            listRef.current.addEventListener('scroll', syncScrollBar);
-        }
+    //     if (listRef.current) {
+    //         listRef.current.addEventListener('scroll', syncScrollBar);
+    //     }
 
-        // Permet de supprimer l'écouteur d'évènement scroll quand le composant est démonté pour éviter les fuites de mémoires et bugs
-        return () => {
-            if (listRef.current) {
-                listRef.current.removeEventListener('scroll', syncScrollBar);
-            }
-        };
-    }, []);
+    //     // Permet de supprimer l'écouteur d'évènement scroll quand le composant est démonté pour éviter les fuites de mémoires et bugs
+    //     return () => {
+    //         if (listRef.current) {
+    //             listRef.current.removeEventListener('scroll', syncScrollBar);
+    //         }
+    //     };
+    // }, []);
 
-    // Synchronise la position de la fenêtre navigable avec la position de la scrollbar
-    const handleScroll = (newPosition: number) => {
-        if (listRef.current) {
-            const maxScrollTop = listRef.current.scrollHeight - listRef.current.clientHeight;
-            const scrollTop = (newPosition * 2 / 100) * maxScrollTop; 
-            listRef.current.scrollTop = scrollTop;
-        }
-        setScrollPosition(newPosition * 2);
-    };
+    // // Synchronise la position de la fenêtre navigable avec la position de la scrollbar
+    // const handleScroll = (newPosition: number) => {
+    //     if (listRef.current) {
+    //         const maxScrollTop = listRef.current.scrollHeight - listRef.current.clientHeight;
+    //         const scrollTop = (newPosition * 2 / 100) * maxScrollTop; 
+    //         listRef.current.scrollTop = scrollTop;
+    //     }
+    //     setScrollPosition(newPosition * 2);
+    // };
 
     return (
         <div className="patchnotes-selector">
@@ -79,7 +78,7 @@ function PatchnotesSelector ({patchnotes, activePatchnote, handleSelectedPatchno
                 </li>
             ))}
             </ul>
-            <ScrollBar size={1} onScroll={handleScroll} scrollPosition={scrollPosition} />
+            {/* <ScrollBar size={1} onScroll={handleScroll} scrollPosition={scrollPosition} /> */}
         </div>
     );
 };

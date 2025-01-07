@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0.625rem;
-    width: 100%;
+    width: 90%;
 }
 
 .patchnotes-selector_list {
@@ -29,9 +29,10 @@
     // padding-inline: 100px;
     position: relative;
     white-space: normal;
-    padding: 0.625rem;
+    // padding: 0.625rem;
     border-radius: 8px;
-    transition: transform 0.2s ease;;
+    transition: transform 0.2s ease;
+    z-index: 1;
 }
 
 .patchnotes-selector_option:hover {
@@ -48,6 +49,16 @@
 }
 
 .patchnotes-selector_info {
+    height: 60%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    color: #fff;
+    font-size: 1.2rem; /* Taille du texte */
+    font-weight: bold;
     text-align: center; /* Centre les textes sous les images */
 }
 

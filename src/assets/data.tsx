@@ -62,10 +62,6 @@ export const patchnotes: { id: number; version: string; date: string; title: str
 
 **Corrections de bugs :**
 - Correction des zones de collision manquantes dans l’arène "Forêt Enchantée".
-
-sdfsdfsdf
-
-sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe drimlgijqdfspigqdmfgqqdfgolqdfughqdùepflioghqd FOGUPJQDFôhgujqdsurpp fgjqdsfuohgqjsdfssdfg dfshgzrtgsdfpoighdflghjfqsfwpgdiouhdsfqomklgsduiguSHGBUIPOFMQSDUKGLHJOJFDGBHMQUJSFKHJLGU
 `,
     image:'src/assets/images/deadlock-test-patch-3.jpg'
 },

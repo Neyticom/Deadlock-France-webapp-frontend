@@ -8,9 +8,11 @@ import './Markdown.scss';
 
 interface PatchnotesReaderProps {
     patchnote: IPatchnote;
+    handleSelectedPatchnote: (id: number) => void;
+    activePatchnote: number | null;
 }
 
-export const PatchnotesReader = ({patchnote}: PatchnotesReaderProps) => {
+export const PatchnotesReader = ({patchnote, handleSelectedPatchnote, activePatchnote}: PatchnotesReaderProps) => {
 
 
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -57,14 +59,42 @@ export const PatchnotesReader = ({patchnote}: PatchnotesReaderProps) => {
         setScrollPosition(newPosition * 2);
     };
 
+    const goToNextPatchnote = () => {
+        if (activePatchnote !== null)
+        {handleSelectedPatchnote(activePatchnote + 1)}; // Passe à l'ID suivant
+    };
+
+    // Fonction pour naviguer vers le patchnote précédent
+    const goToPreviousPatchnote = () => {
+        if (activePatchnote !== null)
+        handleSelectedPatchnote(activePatchnote - 1); // Passe à l'ID précédent
+    };
+
     return(
             <div className="patchnotes-reader">
+                {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
+                <button
+                className="patchnotes-reader_button patchnotes-reader_button--left"
+                onClick={goToPreviousPatchnote}
+                aria-label="Patchnote précédent"
+                disabled={activePatchnote === null || activePatchnote <= 1} // Désactive le bouton si on est au premier patchnote
+            >
+                <img src="src/assets/images/chevron-double-right.svg" alt="Flèche gauche" />
+            </button>
                 <ScrollBar size={2} onScroll={handleScroll} scrollPosition={scrollPosition} />
                 <div ref={divRef} className="patchnotes-reader_content">
-                    {/* biome-ignore lint/style/useTemplate: <explanation> */}
-                    <h2 className="patchnote_title">{"Patchnote v" + patchnote.version + ' - "' + patchnote.title + '"'}</h2>
+                    <img src={patchnote.image} alt={`Patchnote ${patchnote.version}`} className="patchnote-image" />
+                    <h2 className="patchnote_title">{`Patchnote v${patchnote.version} - "${patchnote.title}"`}</h2>
                     <Remark>{patchnote.content}</Remark>
                 </div>
+                {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
+                <button
+                className="patchnotes-reader_button patchnotes-reader_button--right"
+                onClick={goToNextPatchnote}
+                aria-label="Patchnote suivant"
+            >
+                <img src="src/assets/images/chevron-double-right.svg" alt="Flèche droite" className="" />
+            </button>
             </div>
     );
 };

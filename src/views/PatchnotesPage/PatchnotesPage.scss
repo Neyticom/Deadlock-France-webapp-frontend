@@ -7,16 +7,15 @@
     align-items: center;
     padding: 1.25rem;
     color: #fff;
-    overflow: hidden;
 }
 
 .patchnotes-page_content{
-    width: 100%;
-    max-width: 1200px; /* Largeur maximale de la zone de contenu */
+    width: 100%; /* Largeur maximale de la zone de contenu */
     display: flex;
     flex-direction: column; /* Empile les composants (selector et reader) verticalement */
     align-items: center;
-    gap: 20px; /* Espacement entre les sections */
+    gap: 20px;
+    overflow-y: hidden; /* Espacement entre les sections */
 }
 
 .patchnotes-page_title {

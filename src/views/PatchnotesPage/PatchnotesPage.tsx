@@ -32,7 +32,7 @@ const PatchnotesPage = () => {
             <main className='patchnotes-page_content'>
                 <PatchnotesSelector patchnotes={patchnotes} activePatchnote={activePatchnote} handleSelectedPatchnote={handleSelectedPatchnote}/>
                 {selectedPatchnote ? (
-                    <PatchnotesReader patchnote={selectedPatchnote}/>
+                    <PatchnotesReader patchnote={selectedPatchnote} activePatchnote={activePatchnote} handleSelectedPatchnote={handleSelectedPatchnote} />
                 ) : null}
             </main>
             <Footer />

@@ -1,23 +1,55 @@
 .patchnotes-reader{
-    width: 100%;
+    width: 75%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    max-height: 75%;
+    // padding-left: 8rem;
 }
+
+.patchnotes-reader_button {
+    // height: 20%;
+    max-width: 20%;
+    background: transparent;
+    border: solid 2px #df1818;
+    
+}
+
+.patchnotes-reader_button img{
+    max-width: inherit;
+    height: 30%;
+    
+}
+
+.patchnotes-reader_button--left img{
+    transform: rotate(180deg);
+}
+
+
 
 
 
 .patchnotes-reader_content{
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    // width: 75%;
     font-family: 'Akatab';
-    overflow-y: scroll;
     // margin-right: 150px;
-    padding-left: 65px;
+    max-width: auto;
+    padding: 1rem;
+    margin: 0 auto;
     text-align: left;
     scrollbar-width: none;
     user-select: text;
-    justify-content: center;
+    justify-content: flex start;
+    overflow-y: scroll;
+    box-sizing: border-box;
 }
 
-.patchnotes-reader_content li {
-    font-size: 25px;
+
+.patchnote-image {
+    width: 55rem;
+    height: 55rem;
+    padding-left: 11rem;
+    height: auto;
+    object-fit: cover;
 }
