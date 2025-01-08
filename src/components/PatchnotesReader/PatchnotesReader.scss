@@ -7,16 +7,19 @@
 }
 
 .patchnotes-reader_button {
-    // height: 20%;
-    max-width: 20%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: fit-content;
+    width: 20%;
     background: transparent;
-    border: solid 2px #df1818;
+    border: none;
     
 }
 
 .patchnotes-reader_button img{
-    max-width: inherit;
-    height: 30%;
+    max-width: 20%;
+    
     
 }
 
@@ -46,7 +49,7 @@
 }
 
 
-.patchnote-image {
+.patchnote-reader_image {
     width: 55rem;
     height: 55rem;
     padding-left: 11rem;

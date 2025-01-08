@@ -83,7 +83,7 @@ export const PatchnotesReader = ({patchnote, handleSelectedPatchnote, activePatc
             </button>
                 <ScrollBar size={2} onScroll={handleScroll} scrollPosition={scrollPosition} />
                 <div ref={divRef} className="patchnotes-reader_content">
-                    <img src={patchnote.image} alt={`Patchnote ${patchnote.version}`} className="patchnote-image" />
+                    <img src={patchnote.image} alt={`Patchnote ${patchnote.version}`} className="patchnote-reader_image" />
                     <h2 className="patchnote_title">{`Patchnote v${patchnote.version} - "${patchnote.title}"`}</h2>
                     <Remark>{patchnote.content}</Remark>
                 </div>
