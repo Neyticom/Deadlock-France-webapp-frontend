@@ -1,9 +1,9 @@
 .patchnotes-reader{
+    max-height: 60%;
     width: 75%;
     display: flex;
     justify-content: space-between;
-    max-height: 75%;
-    // padding-left: 8rem;
+    flex-grow: 1;
 }
 
 .patchnotes-reader_button {
@@ -28,15 +28,10 @@
 }
 
 
-
-
-
 .patchnotes-reader_content{
     display: flex;
     flex-direction: column;
-    // width: 75%;
     font-family: 'Akatab';
-    // margin-right: 150px;
     max-width: auto;
     padding: 1rem;
     margin: 0 auto;
@@ -55,4 +50,28 @@
     padding-left: 11rem;
     height: auto;
     object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .patchnotes-reader {
+        flex-grow: 0;
+    }
+    .patchnotes-reader_content {
+        height: inherit;
+        overflow: auto;
+
+    }
+
+    .patchnote-reader_image {
+        padding: 0;
+        width: inherit;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
 }

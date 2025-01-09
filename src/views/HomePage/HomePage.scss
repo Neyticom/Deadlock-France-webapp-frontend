@@ -1,5 +1,5 @@
 .homepage-container {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -8,6 +8,7 @@
 
 
 .homepage-main {
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,12 +94,13 @@
 
 @media (max-width:1024px) {
     .homepage-container {
-        height: auto; /* Permet à la hauteur de s'ajuster au contenu */
+        min-height: 100vh; /* Permet à la hauteur de s'ajuster au contenu */
         padding-inline: 1rem; /* Ajoute un peu d'espace sur les côtés */
-        overflow: hidden; /* Supprime tout débordement */
     }
 
     .homepage-main {
+        flex-grow: 1;
+        box-sizing: border-box;
         text-align: center;
         margin-bottom: 1rem;
     }

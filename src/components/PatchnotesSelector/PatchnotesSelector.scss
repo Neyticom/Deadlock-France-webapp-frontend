@@ -14,7 +14,7 @@
     overflow-x: scroll; /* Scroll horizontal activé uniquement ici */
     overflow-y: hidden; /* Pas de scroll vertical */
     gap: 1rem;
-    padding: 10px;
+    padding: 0.625rem;
     width: 100%;
 }
 
@@ -24,12 +24,9 @@
     font-weight: 400;
     letter-spacing: 1.82px;
     text-align: center;
-    // padding-block: 17px;
     font-size: 14px;
-    // padding-inline: 100px;
     position: relative;
     white-space: normal;
-    // padding: 0.625rem;
     border-radius: 8px;
     transition: transform 0.2s ease;
     z-index: 1;
@@ -40,8 +37,8 @@
 }
 
 .patchnotes-selector_image {
-    width: 100px; /* Taille des images */
-    height: 100px;
+    width: 6.25rem; /* Taille des images */
+    height: 6.25rem;
     object-fit: cover; /* Coupe ou adapte les images pour bien remplir le cadre */
     border-radius: 8px; /* Bords arrondis pour les images */
     margin-bottom: 10px; /* Espacement avec le texte en dessous */
@@ -81,6 +78,20 @@
 .patchnotes-selector_active-option::before,
 .patchnotes-selector_active-option::after {
     display: none; /* Suppression des flèches pour l'option active */
+}
+
+@media (max-width: 1024px) {
+    .patchnotes-selector {
+        
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
 }
 
 /* Cacher les scrollbars natives */

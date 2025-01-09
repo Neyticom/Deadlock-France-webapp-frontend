@@ -1,3 +1,4 @@
+// biome-ignore lint/style/useImportType: <explanation>
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';

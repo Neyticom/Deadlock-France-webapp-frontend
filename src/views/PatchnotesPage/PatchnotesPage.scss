@@ -26,3 +26,27 @@
     margin-bottom: 20px; /* Espacement avec la liste */
     white-space: nowrap; /* Empêche le texte de se couper */
 }
+
+@media (max-width: 1024px) {
+    .patchnotes-page {
+        overflow-y: hidden;
+        max-height: 100vh;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+    
+    .patchnotes-page_content {
+        height: fit-content;
+        box-sizing: border-box;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
+}
