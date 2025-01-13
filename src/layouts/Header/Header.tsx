@@ -11,7 +11,7 @@ const Header = () => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
         const handleResize  = (event: MediaQueryListEvent | MediaQueryList) => {
             setIsMobile(event.matches);
         };
@@ -34,7 +34,7 @@ const Header = () => {
         <header className="header">
             {!isMobile && (
                 <>
-                    <Link to="/" onClick={changePage} className='logo-link'><img src={Logo} alt="Logo Deadlock France" className='logo' /></Link>
+                    <Link to="/" onClick={changePage} className='logo-link'><img src={Logo} alt="Logo Deadlock France" className='logo' /><h1 className='logo-title'>Deadlock<br/>France</h1></Link>
                     <nav className="nav-list">
                         <Link to="/" onClick={changePage} className={activePage === '' ? 'active nav-link' : 'nav-link'}>Accueil</Link>
                         <Link to="/patchnotes" onClick={changePage} className={activePage === 'patchnotes' ? 'active nav-link' : 'nav-link'}>Patchnotes</Link>
