@@ -27,7 +27,7 @@ const PatchnotesPage = () => {
     const location = useLocation();
 
     useEffect(() => {
-        if(!isMobile && location.pathname == '/patchnotes'){
+        if(!isMobile && location.pathname === '/patchnotes'){
             navigate('/patchnotes/1');
         }
     }, [isMobile, location.pathname, navigate]);

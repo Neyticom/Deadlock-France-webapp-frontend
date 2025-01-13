@@ -79,7 +79,7 @@ export const PatchnotesReader = ({patchnote, handleSelectedPatchnote, activePatc
                 aria-label="Patchnote précédent"
                 disabled={activePatchnote === null || activePatchnote <= 1} // Désactive le bouton si on est au premier patchnote
             >
-                <img src="src/assets/images/chevron-double-right.svg" alt="Flèche gauche" />
+                <img src="/src/assets/images/chevron-double-right.svg" alt="Flèche gauche" />
             </button>
                 <ScrollBar size={2} onScroll={handleScroll} scrollPosition={scrollPosition} />
                 <div ref={divRef} className="patchnotes-reader_content">
@@ -93,7 +93,7 @@ export const PatchnotesReader = ({patchnote, handleSelectedPatchnote, activePatc
                 onClick={goToNextPatchnote}
                 aria-label="Patchnote suivant"
             >
-                <img src="src/assets/images/chevron-double-right.svg" alt="Flèche droite" className="" />
+                <img src="/src/assets/images/chevron-double-right.svg" alt="Flèche droite" className="" />
             </button>
             </div>
     );
