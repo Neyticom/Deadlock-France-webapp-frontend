@@ -86,29 +86,34 @@
 
 @media (max-width: 768px) {
     .patchnotes-selector {
-        flex-direction: column; /* Passage en colonne pour un affichage vertical */
-        align-items: center; /* Centrer les éléments */
+        flex-direction: column; /* Empilement vertical */
+        align-items: center; /* Centre les éléments */
     }
 
     .patchnotes-selector_list {
-        flex-wrap: wrap; /* Permet le retour à la ligne */
-        justify-content: center; /* Centrer les éléments dans le container */
-        overflow-x: hidden; /* Désactive le scroll horizontal */
-        overflow-y: auto; /* Active le scroll vertical si nécessaire */
-        gap: 1.5rem; /* Espace ajusté entre les vignettes */
+        align-items: center;
+        flex-direction: column; /* Une seule colonne */
+        flex-wrap: nowrap; /* Pas de retour à la ligne */
+        justify-content: flex-start; /* Centrer les vignettes */
+        gap: 1.5rem; /* Espacement entre les vignettes */
+        overflow-y: auto; /* Scroll vertical si nécessaire */
+        width: 100%; /* Prend toute la largeur disponible */
     }
 
     .patchnotes-selector_option,
     .patchnotes-selector_active-option {
-        width: 100%; /* Chaque vignette prend la largeur disponible */
-        max-width: 10rem; /* Taille maximale pour garder une cohérence visuelle */
+        width: 100%; /* Les vignettes occupent presque toute la largeur */
+        max-width: 20rem; /* Taille maximale pour les grandes résolutions */
+        max-height: 18rem;
+        text-align: center; /* Centrage du texte */
     }
 
     .patchnotes-selector_image {
-        width: 100%; /* Adapte l'image à la largeur de l'option */
-        height: auto; /* Garde les proportions */
-        margin-bottom: 0.5rem; /* Espacement ajusté */
+        width: 100%; /* Largeur de l'image calée sur le conteneur */
+        height: inherit; /* Proportions respectées */
+        margin-bottom: 0.75rem; /* Espacement ajusté entre l'image et le texte */
     }
+
 
 }
 
