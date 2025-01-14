@@ -1,52 +1,52 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import DonateButton from '../../components/DonateButton/DonateButton';
 import './Footer.scss';
 
-const useIsMobile = () => {
-    const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 576);
+const Footer = () => {
 
-    React.useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 576);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+    const [isMobile, setIsMobile] = useState(false);
+    
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
+        const handleResize  = (event: MediaQueryListEvent | MediaQueryList) => {
+            setIsMobile(event.matches);
+        };
+
+        handleResize(mediaQuery);
+        mediaQuery.addEventListener('change', handleResize);
+
+        return () => mediaQuery.removeEventListener('change', handleResize);
     }, []);
 
-    return isMobile;
-};
-
-export default function Footer () {
-    const isMobile = useIsMobile();
+    const page = window.location.pathname.split('/')[1];
 
     return (
         <footer className="footer">
-            {isMobile ? (
-                /* --- Structure Mobile --- */
-                <nav className="nav-mobile-footer">
-                    <ul className="nav-list-mobile">
-                        {/* Accueil */}
-                        <li>
-                            <Link to="/" className="nav-link-mobile">
-                                <span className="nav-icon">🏠</span>
-                                <span className="nav-label">Accueil</span>
-                            </Link>
-                        </li>
-
-                        {/* Patchnotes */}
-                        <li>
-                            <Link to="/patchnotes" className="nav-link-mobile">
-                                <span className="nav-icon">📝</span>
-                                <span className="nav-label">Patchnotes</span>
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
-            ) : (
-                /* --- Structure Desktop/Tablette --- */
-                <div className="footer-desktop">
-                    <DonateButton />
-                </div>
+            {isMobile && (
+                <nav className="nav-list">
+                    <Link to="/" className={page === '' ? 'active nav-link' : 'nav-link'}>Accueil</Link>
+                    <Link to="/patchnotes" className={page === 'patchnotes' ? 'active nav-link' : 'nav-link'}>Patchnotes</Link>
+                 </nav>
             )}
         </footer>
     );
 };
+
+{/* <nav className="nav-mobile-footer">
+    <ul className="nav-list-mobile">
+        <li>
+            <Link to="/" className="nav-link-mobile">
+                <span className="nav-icon">🏠</span>
+                <span className="nav-label">Accueil</span>
+            </Link>
+        </li>
+        <li>
+            <Link to="/patchnotes" className="nav-link-mobile">
+                <span className="nav-icon">📝</span>
+                <span className="nav-label">Patchnotes</span>
+            </Link>
+        </li>
+    </ul>
+</nav> */}
+
+export default Footer;
