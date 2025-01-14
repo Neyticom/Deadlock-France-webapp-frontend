@@ -1,7 +1,7 @@
 .header {
     width: 100%;
     background-color: #000000e0;
-    padding-block: 1.5rem;
+    padding-block: 1.2rem;
 }
 
 // Socials
@@ -9,7 +9,7 @@
 .social-nav {
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: 3.5rem;
 }
 
 .social-icon {
@@ -23,10 +23,18 @@
 
 @media (min-width: 576px) { // Smartphones
 
+    .header {
+        padding-block: 1.6rem;
+    }
+
     // Socials
 
+    .social-nav {
+        gap: 4.5rem;
+    }
+
     .social-icon {
-        width: 2.8rem;
+        width: 3rem;
     }
 
 }
@@ -36,9 +44,9 @@
     .header {
         background-color: transparent;
         display: flex;
-        justify-content: space-around;
         align-items: center;
-        padding-block: 2.2rem;
+        padding: 2.2rem 4rem;
+        gap: 4.5rem;
     }
 
     // Navigation
@@ -46,15 +54,11 @@
     .nav-list {
         display: flex;
         gap: 2.5rem;
-        align-items: center;
-        justify-content: space-between;
 
         .nav-link {
-            color: #ffffff;
             position: relative;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             letter-spacing: 0.05rem;
-            display: flex;
 
             &:hover{
                 color: #47CF73;
@@ -73,7 +77,6 @@
                 height: 0.15rem;
                 background-color: #ffffff;
                 width: 2.6rem;
-                padding: 0 auto;
             }
         }
     }
@@ -92,160 +95,95 @@
         font-size: 1rem;
         font-weight: 200;
         margin-top: 0.2rem;
+        letter-spacing: 0.03rem;
     }
 
     // Socials
 
     .social-nav {
         gap: 2.5rem;
+        margin-left: auto;
     }
 
     .social-icon {
-        width: 2.3rem;
+        width: 2.5rem;
     }
 
 }
 
-@media (min-width: 992px) {} // Laptops
+@media (min-width: 992px) { // Laptops
 
-@media (min-width: 1200px) {} // Desktops
+    .header {
+        padding-inline: 5rem;
+        gap: 5rem;
+    }
 
-@media (min-width: 1400px) {} // Monitors
+    // Navigation
 
-// @media (max-width: 1024px) {
+    .nav-list {
+        gap: 2.8rem;
+    }
 
-//     /* Adaptation du header */
-//     .header {
-//         padding-inline: 2rem;
-//         padding-top: 0.5rem; /* Réduction des marges */
-//     }
+}
 
-//     /* Réduction de l'espace entre les éléments de navigation */
-//     .nav .nav-list {
-//         gap: 0.5rem
-//     }
+@media (min-width: 1200px) { // Desktops
 
-//     /* Réduction de la taille de la police des liens */
-//     .nav-link {
-//         font-size: 1.2rem; /* Diminution de la taille de la police pour la tablette */
-//     }
+    .header {
+        padding-inline: 10rem;
+        gap: 6rem;
+    }
 
-//     /* Modification de la largeur du logo */
-//     .header-logo {
-//         width: 2,8rem; /* Logo un peu plus petit sur tablette */
-//         margin-top: 3rem;
-//     }
+    // Navigation
 
-//     /* Ajustement de la taille de la police du titre */
-//     .logo-title {
-//         font-size: 0.875rem; /* Police réduite pour la tablette */
-//     }
+    .nav-list {
+        gap: 3rem;
+    }
 
-//     /* Disposition des icônes des réseaux sociaux */
-//     .social-medias {
-//         gap: 1.5rem; /* Moins d'espace entre les icônes */
-//     }
 
-//     /* Réduction de la taille des icônes sociales */
-//     .social-media {
-//         width: 2rem; /* Icônes un peu plus petites */
-//     }
-// }
+    // Socials
 
-// .header {
-//     padding-block: 2rem;
-//     top: 0;
-//     padding-inline: 6.25rem;
-//     left: 0;
-//     width: 100%;
-//     position: relative;
-// }
-//     .nav-desktop {
-//         .nav-list {
-//             display: flex;
-//             gap: 4.563rem;
-//             align-items: center;
-//             justify-content: space-between;
+    .social-nav {
+        gap: 2.8rem;
+    }
 
-//             .nav-link {
-//                 color: #ffffff;
-//                 position: relative;
-//                 font-size: 20px;
-//                 font-weight: 400;
-//                 letter-spacing: 0.05rem;
-//                 display: flex;
-//                 &:hover{
-//                     color: #47CF73;
-//                 }
-//             }
-//     }
+}
 
-//     .nav {
-//         .nav-list {
-//             display: flex;
-//             gap: 4.563rem;
-//             align-items: center;
-//             justify-content: space-between;
+@media (min-width: 1400px) { // Monitors
 
-//             .nav-link {
-//                 color: #ffffff;
-//                 position: relative;
-//                 font-size: 20px;
-//                 font-weight: 400;
-//                 letter-spacing: 0.05rem;
-//                 display: flex;
-//                 &:hover{
-//                     color: #47CF73;
-//                 }
-//             }
+    .header {
+        padding-inline: 11rem;
+        gap: 7rem;
+    }
 
-//             .active:hover{
-//                 color: #ffffff;
-//             }
+    // Logo
 
-//             .active::after {
-//                 content: '';
-//                 position: absolute;
-//                 left: 50%;
-//                 transform: translateX(-50%);
-//                 bottom: -0.625rem;
-//                 height: 0.188rem;
-//                 background-color: white;
-//                 width: 2.875rem;
-//                 padding: 0 auto;
-//             }
-//         }
-//     }
-// }
+    .logo {
+        width: 3.8rem;
+    }
 
-// .header-logo {
-//     width: 3.75rem;
-// }
+    .logo-title {
+        font-size: 1.3rem;
+    }
 
-// .logo-container {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//   }
-  
-//   .logo-title {
-//     font-size: 1rem; 
-//     font-weight: bold; 
-//     margin-top: 0.5rem; 
-//     text-align: center;
-//     color: #fff; 
-//   }
+    // Navigation
 
-// .social-medias {
-//     margin-left: auto;
-//     display: flex;
-//     gap: 2.25rem;
-// }
+    .nav-list {
+        gap: 4rem;
 
-// .social-media {
-//     width: 2.5rem;
-//     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(195deg) brightness(106%) contrast(101%); // = #ffffff
-//     &:hover {
-//         filter: invert(68%) sepia(57%) saturate(471%) hue-rotate(86deg) brightness(91%) contrast(89%); // = #47CF73
-//     }
-// }
+        .nav-link {
+            font-size: 1.4rem;
+    
+            &.active::after {
+                height: 0.2rem;
+                width: 3.2rem;
+            }
+        }
+    }
+
+    // Socials  
+
+    .social-icon {
+        width: 2.7rem;
+    }
+
+}
