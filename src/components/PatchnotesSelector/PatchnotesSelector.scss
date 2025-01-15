@@ -85,6 +85,13 @@
 }
 
 @media (max-width: 768px) {
+   
+
+
+}
+
+@media (max-width: 576px) {
+
     .patchnotes-selector {
         flex-direction: column; /* Empilement vertical */
         align-items: center; /* Centre les éléments */
@@ -104,20 +111,23 @@
     .patchnotes-selector_active-option {
         width: 100%; /* Les vignettes occupent presque toute la largeur */
         max-width: 20rem; /* Taille maximale pour les grandes résolutions */
-        max-height: 18rem;
+        max-height: 13.3rem;
         text-align: center; /* Centrage du texte */
     }
 
     .patchnotes-selector_image {
         width: 100%; /* Largeur de l'image calée sur le conteneur */
-        height: inherit; /* Proportions respectées */
+        height: 13rem; /* Proportions respectées */
         margin-bottom: 0.75rem; /* Espacement ajusté entre l'image et le texte */
+        margin: 0;
     }
 
-
-}
-
-@media (max-width: 576px) {
+    .patchnotes-selector_info {
+        height: 30%;
+        margin-bottom: 0.15rem;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
 
 }
 

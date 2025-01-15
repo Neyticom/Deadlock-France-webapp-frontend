@@ -12,7 +12,7 @@ const PatchnotesPage = () => {
     const [isMobile, setIsMobile] = useState(true);
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        const mediaQuery = window.matchMedia('(max-width: 576px)');
         const handleResize  = (event: MediaQueryListEvent | MediaQueryList) => {
             setIsMobile(event.matches);
         };
@@ -53,6 +53,14 @@ const PatchnotesPage = () => {
                     <>
                         <Header />
                         <main className='patchnotes-page_content'>
+                            {isMobile && (
+                                <h1 className='patchnotes-page_main-title-mobile'>Patchnotes</h1>
+                            )}
+                            
+                            <div className='patchnotes-page_search-bar_container'>
+                                <input type="text" placeholder="Rechercher un Patchnote" className="patchnotes-page_search-bar" />
+                                </div>
+                            
                             <PatchnotesSelector patchnotes={patchnotes} activePatchnote={activePatchnote} handleSelectedPatchnote={handleSelectedPatchnote}/>
                         </main>
                         <Footer />
@@ -65,6 +73,10 @@ const PatchnotesPage = () => {
                             {selectedPatchnote ? (
                                 <h1 className='patchnotes-page_title'>{lastestPatchnote === activePatchnote ? `Dernière Patchnote - ${selectedPatchnote.date}` : `Patchnote du ${selectedPatchnote.date}` }</h1>
                             ) : null}
+
+                            <div className='patchnotes-page_search-bar_container'>
+                                <input type="text" placeholder="Rechercher un Patchnote" className="patchnotes-page_search-bar" />
+                                </div>
 
                             {!isMobile && (
                                 <PatchnotesSelector patchnotes={patchnotes} activePatchnote={activePatchnote} handleSelectedPatchnote={handleSelectedPatchnote}/>

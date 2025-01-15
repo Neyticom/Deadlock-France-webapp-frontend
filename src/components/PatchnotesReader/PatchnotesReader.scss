@@ -45,11 +45,9 @@
 
 
 .patchnote-reader_image {
-    width: 55rem;
-    height: 55rem;
-    padding-left: 11rem;
+    align-self: center;
+    max-width: 80%;
     height: auto;
-    object-fit: cover;
 }
 
 @media (max-width: 1024px) {
@@ -69,6 +67,16 @@
 }
 
 @media (max-width: 768px) {
+    .patchnotes-reader {
+        width: auto;
+    }
+
+
+    .patchnote-reader_image {
+        align-self: center;
+        max-width: 100%;
+        height: auto;
+    }
 
 }
 
