@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.scss';
+import HomeIcon from '../../assets/icons/home.svg';
+import PatchnoteIcon from '../../assets/icons/patchnotes.svg';
 
 const Footer = () => {
 
@@ -23,30 +25,19 @@ const Footer = () => {
     return (
         <footer className="footer">
             {isMobile && (
-                <nav className="nav-list">
-                    <Link to="/" className={page === '' ? 'active nav-link' : 'nav-link'}>Accueil</Link>
-                    <Link to="/patchnotes" className={page === 'patchnotes' ? 'active nav-link' : 'nav-link'}>Patchnotes</Link>
+                <nav className="footer__nav-list">
+                    <Link to="/" className={page === '' ? 'footer__nav-link--active' : 'footer__nav-link'}>
+                        <img src={HomeIcon} alt="" className={page === '' ? 'footer__nav-icon--active' : 'footer__nav-icon'} />
+                        <p className={page === '' ? 'footer__nav-text--active' : 'footer__nav-text'}>Accueil</p>
+                    </Link>
+                    <Link to="/patchnotes" className={page === 'patchnotes' ? 'footer__nav-link--active' : 'footer__nav-link'}>
+                        <img src={PatchnoteIcon} alt="" className={page === 'patchnotes' ? 'footer__nav-icon--active' : 'footer__nav-icon'} />
+                        <p className={page === 'patchnotes' ? 'footer__nav-text--active' : 'footer__nav-text'}>Patchnotes</p>
+                    </Link>
                  </nav>
             )}
         </footer>
     );
 };
-
-{/* <nav className="nav-mobile-footer">
-    <ul className="nav-list-mobile">
-        <li>
-            <Link to="/" className="nav-link-mobile">
-                <span className="nav-icon">🏠</span>
-                <span className="nav-label">Accueil</span>
-            </Link>
-        </li>
-        <li>
-            <Link to="/patchnotes" className="nav-link-mobile">
-                <span className="nav-icon">📝</span>
-                <span className="nav-label">Patchnotes</span>
-            </Link>
-        </li>
-    </ul>
-</nav> */}
 
 export default Footer;
