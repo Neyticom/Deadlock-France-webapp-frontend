@@ -5,13 +5,13 @@
 
 // Socials
 
-.social-nav {
+.header__social-nav {
     display: flex;
     justify-content: center;
     gap: 3.5rem;
 }
 
-.social-icon {
+.header__social-icon {
     width: 2.3rem;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(195deg) brightness(106%) contrast(101%); // = #ffffff
 
@@ -24,11 +24,11 @@
 
     // Socials
 
-    .social-nav {
+    .header__social-nav {
         gap: 4rem;
     }
 
-    .social-icon {
+    .header__social-icon {
         width: 2.5rem;
     }
 
@@ -46,47 +46,50 @@
 
     // Navigation
 
-    .nav-list {
+    .header__nav-list {
         display: flex;
         gap: 2.5rem;
+    }
 
-        .nav-link {
-            position: relative;
-            font-size: 1.2rem;
-            letter-spacing: 0.05rem;
+    .header__nav-link, .header__nav-link--active {
+        position: relative;
+        font-size: 1.2rem;
+        letter-spacing: 0.05rem;
 
-            &:hover{
-                color: #47CF73;
-            } 
+        &:hover {
+            color: #47CF73;
+        } 
+    }
 
-            &.active:hover{
-                color: #ffffff;
-            }
-    
-            &.active::after {
-                content: '';
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: -0.65rem;
-                height: 0.15rem;
-                background-color: #ffffff;
-                width: 2.6rem;
-            }
+    .header__nav-link--active{
+
+        &:hover {
+            color: #ffffff;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -0.65rem;
+            height: 0.15rem;
+            background-color: #ffffff;
+            width: 2.6rem;
         }
     }
 
     // Logo
 
-    .logo-link {
+    .header__logo-link {
         align-self: flex-end;
     }
 
-    .logo {
+    .header__logo {
         width: 3.5rem;
     }
     
-    .logo-title {
+    .header__logo-title {
         font-size: 1rem;
         font-weight: 200;
         margin-top: 0.2rem;
@@ -95,12 +98,12 @@
 
     // Socials
 
-    .social-nav {
+    .header__social-nav {
         gap: 2.5rem;
         margin-left: auto;
     }
 
-    .social-icon {
+    .header__social-icon {
         width: 2.5rem;
     }
 
@@ -115,7 +118,7 @@
 
     // Navigation
 
-    .nav-list {
+    .header__nav-list {
         gap: 2.8rem;
     }
 
@@ -130,14 +133,14 @@
 
     // Navigation
 
-    .nav-list {
+    .header__nav-list {
         gap: 3rem;
     }
 
 
     // Socials
 
-    .social-nav {
+    .header__social-nav {
         gap: 2.8rem;
     }
 
@@ -152,32 +155,32 @@
 
     // Logo
 
-    .logo {
+    .header__logo {
         width: 3.8rem;
     }
 
-    .logo-title {
+    .header__logo-title {
         font-size: 1.3rem;
     }
 
     // Navigation
 
-    .nav-list {
+    .header__nav-list {
         gap: 4rem;
+    }
 
-        .nav-link {
-            font-size: 1.4rem;
-    
-            &.active::after {
-                height: 0.2rem;
-                width: 3.2rem;
-            }
-        }
+    .header__nav-link, .header__nav-link--active {
+        font-size: 1.4rem;
+    }
+
+    .header__nav-link--active::after {
+        height: 0.2rem;
+        width: 3.2rem;
     }
 
     // Socials  
 
-    .social-icon {
+    .header__social-icon {
         width: 2.7rem;
     }
 
