@@ -34,16 +34,16 @@ const Header = () => {
         <header className="header">
             {!isMobile && (
                 <>
-                    <Link to="/" onClick={changePage} className='logo-link'><img src={Logo} alt="Logo Deadlock France" className='logo' /><h1 className='logo-title'>Deadlock<br/>France</h1></Link>
-                    <nav className="nav-list">
-                        <Link to="/" onClick={changePage} className={activePage === '' ? 'active nav-link' : 'nav-link'}>Accueil</Link>
-                        <Link to="/patchnotes" onClick={changePage} className={activePage === 'patchnotes' ? 'active nav-link' : 'nav-link'}>Patchnotes</Link>
+                    <Link to="/" onClick={changePage} className='header__logo-link'><img src={Logo} alt="Logo Deadlock France" className='header__logo' /><h1 className='header__logo-title'>Deadlock<br/>France</h1></Link>
+                    <nav className="header__nav-list">
+                        <Link to="/" onClick={changePage} className={activePage === '' ? 'header__nav-link--active' : 'header__nav-link'}>Accueil</Link>
+                        <Link to="/patchnotes" onClick={changePage} className={activePage === 'patchnotes' ? 'header__nav-link--active' : 'header__nav-link'}>Patchnotes</Link>
                     </nav>
                 </>
             )}
-            <nav className="social-nav">
-                <Link to="http://google.com" target="_blank" className='social-link'><img src={DiscordIcon} alt="Discord DeadLock France" className="social-icon" /></Link>
-                <Link to="http://google.com" target="_blank" className='social-link'><img src={XIcon} alt="X(Twitter) DeadLock France" className="social-icon" /></Link>
+            <nav className="header__social-nav">
+                <Link to="http://google.com" target="_blank" className='header__social-link'><img src={DiscordIcon} alt="Discord DeadLock France" className="header__social-icon" /></Link>
+                <Link to="http://google.com" target="_blank" className='header__social-link'><img src={XIcon} alt="X(Twitter) DeadLock France" className="header__social-icon" /></Link>
             </nav>
         </header>
     );
