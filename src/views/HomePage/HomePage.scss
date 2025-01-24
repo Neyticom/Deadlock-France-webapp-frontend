@@ -1,189 +1,190 @@
-.homepage-container {
-    min-height: 100vh;
+.home {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 }
 
-
-
-.homepage-main {
+.home-main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    flex-grow: 1;
-    text-align: center;
+    gap: 2rem;
 }
 
+// Logo
 
+.home-main__logo {
+    width: 3.8rem;
+}
 
-.main-title {
+.home-main__logo-title {
+    font-size: 1.3rem;
+    font-weight: 200;
+    margin-top: 0.2rem;
+    letter-spacing: 0.03rem;
+}
+
+// Title
+
+.home-main__title {
     color: #ffffff;
     text-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-    font-family: 'Troika';
-    font-size: 2.5rem;
-    font-style: normal;
+    font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: 0.1rem;
-    margin-bottom: 7.6rem;
 }
 
-.news-container {
+// Patchnotes (news)
+
+.home-main__patchnote-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    width: 90%;
-    flex-direction: column;
-    position: relative;
-}
-
-.news-grid {
-    display: flex;
     gap: 2rem;
-    flex-grow: 1;
-    flex-wrap: wrap;
 }
 
-.patchnote-card {
+.home-main__patchnote-card {
+    height: 11.3rem;
+    width: 20rem;
+    border-radius: 0.8rem;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    background-color: black;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 31.25rem;
-    height: 17.563rem;
-    border-radius: 8px;
-    border: 0.063rem solid #fff;
-    overflow: hidden;
-    object-fit: cover;
-
+    opacity: 0.7;
+    transform: scale(0.9);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
-.patchnote-card img {
+.home-main__patchnote-card.selected {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.home-main__patchnote-image {
+    border-radius: 0.8rem;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 45%; // A AJUSTER
 }
 
-.patchnote-card .patchnote-title {
+.home-main__patchnote-title {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
-    color: #fff;
-    padding: 0.5rem; /* Espacement autour du texte */
-    font-size: 1.2rem; /* Taille du texte */
-    font-weight: bold;
-    text-align: center; /* Centrer le texte */
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    width: 75%;
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 
-#patchnotes-link {
-    text-decoration: none;
-    color: #ffffff;
-    border-bottom: 2px solid transparent; 
-    padding-bottom: 2px; 
-    transition: border-color 0.2s ease-in-out;
-    align-self: flex-end;
-    margin-top: 2rem;
+.home-main__patchnote-card:hover .home-main__patchnote-image {
+    opacity: 80%;
+    transition: 0.1s ease-in-out;
 }
 
-#patchnotes-link:hover {
-    border-bottom: 2px solid #ffffff; 
-}
+// .home-main__patchnotes-link {
+//     text-decoration: none;
+//     color: #ffffff;
+//     border-bottom: 2px solid transparent; 
+//     padding-bottom: 2px; 
+//     transition: border-color 0.2s ease-in-out;
+//     align-self: flex-end;
+//     margin-top: 2rem;
+// }
 
-@media (max-width:1024px) {
-    .homepage-container {
-        height: auto; /* Permet à la hauteur de s'ajuster au contenu */
-        overflow: hidden; /* Supprime tout débordement */
-    }
+// .home-main__patchnotes-link:hover {
+//     border-bottom: 2px solid #ffffff; 
+// }
 
-    .homepage-main {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
+// Hide horizontal scrollbar
 
-    .main-title {
-        font-size: 2rem;  /* Réduction de la taille du titre */
-        margin-bottom: 1rem; /* Ajuster l'espacement sous le titre */
-    }
+// .home-main__patchnote-list {
+//     scrollbar-width: none;
+//     -ms-overflow-style: none;
+// }
 
-    .news-container {
-        width: 90%; /* Assure une largeur adaptée */
-        margin: 0 auto; /* Centre horizontalement */
-    }
+// .home-main__patchnote-list::-webkit-scrollbar {
+//     display: none;
+// }
 
-    .news-grid {
-        flex-wrap: nowrap; /* Permet de plier les vignettes */
-        gap: 1rem; /* Espace entre les vignettes */
-        justify-content: center; /* Centre les vignettes horizontalement */
-        // align-items: center;
-    }
+// @media (max-width:1024px) {
 
-    .patchnote-card {
-        position: relative;
-        max-width: 300px;
-        height: auto;
-    }
+//     .home-main {
+//         text-align: center;
+//         margin-bottom: 1rem;
+//     }
 
-    .patchnote-card img {
-        width: 100%;  /* Images s'adaptent à la largeur de leur conteneur */
-        height: auto;  /* Maintenir l'aspect de l'image */
-    }
+//     .home-main__title {
+//         font-size: 2rem;  /* Réduction de la taille du titre */
+//         margin-bottom: 1rem; /* Ajuster l'espacement sous le titre */
+//     }
 
-    #patchnotes-link {
-        font-size: 1.2rem;  /* Réduire la taille de la police du lien */
-        align-self: center;  /* Centrer le lien en bas sur les tablettes */
-        margin-top: 2rem;  /* Ajouter un espacement au-dessus du lien */
-    }
+//     .home-main__patchnote-list {
+//         margin: 0 auto; /* Centre horizontalement */
+//     }
 
-}
+//     .home-main__patchnote-card {
+//         position: relative;
+//         max-width: 300px;
+//         height: auto;
+//     }
 
-@media (max-width: 768px) {
-    .homepage-container {
-        height: auto;
-    }
+//     .home-main__patchnote-image {
+//         width: 100%;  /* Images s'adaptent à la largeur de leur conteneur */
+//         height: auto;  /* Maintenir l'aspect de l'image */
+//     }
 
-    .patchnote-card {
-        position: relative;
-        max-width: 12.5rem;
-        min-height: 7.625rem;
-    }
+//     .home-main__patchnotes-link {
+//         font-size: 1.2rem;  /* Réduire la taille de la police du lien */
+//         align-self: center;  /* Centrer le lien en bas sur les tablettes */
+//         margin-top: 2rem;  /* Ajouter un espacement au-dessus du lien */
+//     }
 
-    .patchnote-card .patchnote-title{
-        padding: 0;
-    }
+// }
 
-    
+// @media (max-width: 768px) {
 
+//     .home-main__patchnote-card {
+//         position: relative;
+//         max-width: 12.5rem;
+//         min-height: 7.625rem;
+//     }
 
-}
+//     .home-main__patchnote-title {
+//         padding: 0;
+//     }
 
-@media (max-width:576px) {
-    .news-grid {
-        min-width: 100vw;
-        display: flex; /* Alignement horizontal des cartes */
-        justify-content: space-around;
-        flex-wrap: nowrap; /* Empêche l'élément de passer à la ligne suivante */
-        overflow-x: scroll; /* Activer le défilement horizontal */
-        gap: 1rem; /* Espacement entre les éléments */
-        // scroll-snap-type: x mandatory; /* Activation du snap horizontal */
-        scroll-padding-left: 0;
-        padding-left: 1rem; /* Espacement à gauche pour ne pas coller à la bordure */
-        width: 100%; /* Assurez-vous que le conteneur occupe toute la largeur disponible */
-        box-sizing: border-box; /* Pour inclure les bordures et paddings dans la largeur totale */
-    }
+// }
 
-    .patchnote-card {
-        flex: 0 0 auto; /* Assurez-vous que les éléments sont de taille fixe */
-        width: 100%; /* Ajustez la largeur des cartes à 80% de la largeur du conteneur */
-        max-width: 12.5rem; /* Limite la largeur maximale des cartes */
-        min-width: 12.5rem; /* Limite la largeur minimale des cartes */
-        min-height: 7.625rem;
-        scroll-snap-align: center; /* Centrage des éléments dans le défilement */
-    }
+// @media (max-width:576px) {
 
-    .patchnote-card img {
-        width: 100%;  /* Adapter les images à la largeur du conteneur */
-        height: auto;  /* Maintenir le ratio de l'image */
-    }
-}
+//     .home-main__patchnote-list {
+
+//         display: flex;
+//         flex-direction: row;
+
+//         gap: 3rem;
+
+//         overflow-x: scroll;
+//         scroll-snap-type: x mandatory;
+//     }
+
+//     .home-main__patchnote-card {
+//         flex: 0 0 auto; /* Assurez-vous que les éléments sont de taille fixe */
+//         width: 100%; /* Ajustez la largeur des cartes à 80% de la largeur du conteneur */
+//         max-width: 12.5rem; /* Limite la largeur maximale des cartes */
+//         min-width: 12.5rem; /* Limite la largeur minimale des cartes */
+//         min-height: 7.625rem;
+//         scroll-snap-align: center; /* Centrage des éléments dans le défilement */
+//     }
+
+//     .home-main__patchnote-image {
+//         width: 100%;  /* Adapter les images à la largeur du conteneur */
+//         height: auto;  /* Maintenir le ratio de l'image */
+//     }
+// }
