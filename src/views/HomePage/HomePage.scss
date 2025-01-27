@@ -7,24 +7,24 @@
 }
 
 .home-main {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 // Logo
 
 .home-main__logo {
-    width: 3.8rem;
+    width: 3.2rem;
 }
 
 .home-main__logo-title {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 200;
-    margin-top: 0.2rem;
-    letter-spacing: 0.03rem;
+    letter-spacing: 0.02rem;
 }
 
 // Title
@@ -32,7 +32,7 @@
 .home-main__title {
     color: #ffffff;
     text-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.1rem;
 }
@@ -43,14 +43,14 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 2rem;
+    gap: 0.2rem;
 }
 
 .home-main__patchnote-card {
-    height: 11.3rem;
-    width: 20rem;
-    border-radius: 0.8rem;
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    height: 6.78rem;
+    width: 12rem;
+    border-radius: 0.6rem;
+    box-shadow: 0px 1px 7.5px rgba(0, 0, 0, 0.25);
     background-color: black;
     position: relative;
     opacity: 0.7;
@@ -64,11 +64,11 @@
 }
 
 .home-main__patchnote-image {
-    border-radius: 0.8rem;
+    border-radius: 0.6rem;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 45%; // A AJUSTER
+    opacity: 45%;
 }
 
 .home-main__patchnote-title {
@@ -78,13 +78,233 @@
     transform: translate(-50%, -50%);
     text-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
     width: 75%;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
 .home-main__patchnote-card:hover .home-main__patchnote-image {
     opacity: 80%;
     transition: 0.1s ease-in-out;
+}
+
+.home-main__patchnotes-link{
+    font-size: 0.8rem;
+    letter-spacing: 0.01rem;
+}
+
+@media (min-width: 350px) {
+
+    .home-main {
+        gap: 1.4rem;
+    }
+    
+    // Logo
+    
+    .home-main__logo {
+        width: 4rem;
+    }
+    
+    .home-main__logo-title {
+        margin-top: 0.2rem;
+        font-size: 1.4rem;
+    }
+    
+    // Title
+    
+    .home-main__title {
+        font-size: 1.4rem;
+    }
+    
+    // Patchnotes (news)
+    
+    .home-main__patchnote-list {
+        gap: 0.5rem;
+    }
+    
+    .home-main__patchnote-card {
+        height: 9.04rem;
+        width: 16rem;
+    }
+    
+    .home-main__patchnote-title {
+        font-size: 1.3rem;
+    }
+    
+    .home-main__patchnotes-link{
+        font-size: 1rem;
+    }
+
+}
+
+@media (min-width: 450px) {
+
+    .home-main {
+        gap: 1.4rem;
+    }
+
+    // Logo
+
+    .home-main__logo {
+        width: 3.8rem;
+    }
+
+    .home-main__logo-title {
+        font-size: 1.3rem;
+        margin-top: 0.2rem;
+        letter-spacing: 0.03rem;
+    }
+
+    // Title
+
+    .home-main__title {
+        font-size: 1.6rem;
+    }
+
+    // Patchnotes (news)
+
+    .home-main__patchnote-list {
+        gap: 1.5rem;
+    }
+
+    .home-main__patchnote-card {
+        height: 11.3rem;
+        width: 20rem;
+        border-radius: 0.8rem;
+    }
+
+    .home-main__patchnote-image {
+        border-radius: 0.8rem;
+    }
+
+    .home-main__patchnote-title {
+        font-size: 1.4rem;
+    }
+
+    .home-main__patchnotes-link{
+        font-size: inherit;
+        letter-spacing: 0.02rem;
+    }
+
+}
+
+@media (min-width: 576px) {
+
+    .home-main {
+        gap: 1.8rem;
+    }
+
+    // Logo
+
+    .home-main__logo {
+        width: 5rem;
+    }
+
+    .home-main__logo-title {
+        font-size: 1.5rem;
+    }
+
+    // Title
+
+    .home-main__title {
+        font-size: 2rem;
+    }
+
+    // Patchnotes (news)
+
+    .home-main__patchnote-list {
+        gap: 1.6rem;
+    }
+
+    .home-main__patchnote-card {
+        height: 13.56rem;
+        width: 24rem;
+    }
+
+    .home-main__patchnote-title {
+        font-size: 1.6rem;
+    }
+
+    .home-main__patchnotes-link{
+        font-size: 1.2rem;
+    }
+
+}
+
+@media (min-width: 767px) { // Tablets
+
+    .home-main {
+        gap: 3rem;
+        padding-bottom: 5rem;
+    }
+
+    // Title
+
+    .home-main__title {
+        font-size: 2.6rem;
+    }
+
+    // Patchnotes (news)
+
+    .home-main__patchnote-list {
+        gap: 1rem;
+    }
+
+    .home-main__patchnote-card {
+        height: 100%;
+        width: 30%;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .home-main__patchnote-title {
+        font-size: 1.4rem;
+    }
+
+    .home-main__patchnotes-link{
+        align-self: flex-end;
+        margin-right: 2rem;
+    }
+
+}
+
+@media (min-width: 992px) { // Laptops
+
+    .home-main {
+        gap: 2rem;
+        padding-bottom: 8rem;
+    }
+
+    // Title
+
+    .home-main__title {
+        margin-bottom: 1rem;
+        font-size: 2.8rem;
+        text-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    // Patchnotes (news)
+
+    .home-main__patchnote-card {
+        width: auto;
+        height: 80%;
+    }
+    .home-main__patchnote-list {
+        padding-inline: 4rem;
+        gap: 2rem;
+    }
+
+    .home-main__patchnotes-link {
+        margin-right: 4rem;
+    }
+
+}
+
+@media (min-width: 1200px) { // Desktops
+
+}
+
+@media (min-width: 1400px) { // Monitors
+
 }
 
 // .home-main__patchnotes-link {
