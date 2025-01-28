@@ -73,7 +73,7 @@
 
     .header__nav-link, .header__nav-link--active {
         position: relative;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         letter-spacing: 0.05rem;
 
         &:hover {
@@ -110,7 +110,7 @@
     }
     
     .header__logo-title {
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: 200;
         margin-top: 0.2rem;
         letter-spacing: 0.03rem;
@@ -157,6 +157,10 @@
         gap: 3rem;
     }
 
+    .header__nav-link, .header__nav-link--active {
+        font-size: 1.4rem;
+    }
+
 
     // Socials
 
@@ -187,10 +191,6 @@
 
     .header__nav-list {
         gap: 4rem;
-    }
-
-    .header__nav-link, .header__nav-link--active {
-        font-size: 1.4rem;
     }
 
     .header__nav-link--active::after {

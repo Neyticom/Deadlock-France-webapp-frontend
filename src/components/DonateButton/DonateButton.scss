@@ -37,8 +37,21 @@
     .donate-button {
         position: absolute;
         margin-right: 2rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         bottom: 0;
         right: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .donate-button {
+        margin-right: 4rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .donate-button {
+        margin-bottom: 3rem;
     }
 }

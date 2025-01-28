@@ -90,6 +90,11 @@
 .home-main__patchnotes-link{
     font-size: 0.8rem;
     letter-spacing: 0.01rem;
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.4rem;
+    }
 }
 
 @media (min-width: 350px) {
@@ -241,6 +246,7 @@
 
     .home-main__title {
         font-size: 2.6rem;
+        margin-bottom: 1rem;
     }
 
     // Patchnotes (news)
@@ -270,14 +276,14 @@
 @media (min-width: 992px) { // Laptops
 
     .home-main {
-        gap: 2rem;
+        gap: 1rem;
         padding-bottom: 8rem;
     }
 
     // Title
 
     .home-main__title {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         font-size: 2.8rem;
         text-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
     }
@@ -301,110 +307,19 @@
 
 @media (min-width: 1200px) { // Desktops
 
+    .home-main {
+        max-width: 68rem;
+        margin-inline: auto;
+        margin-bottom: 1rem;
+    }
+
+    .home-main__patchnote-list {
+        gap: 3rem;
+        padding: 0;
+    }
+
+    .home-main__patchnotes-link {
+        margin-right: 0;
+    }
+
 }
-
-@media (min-width: 1400px) { // Monitors
-
-}
-
-// .home-main__patchnotes-link {
-//     text-decoration: none;
-//     color: #ffffff;
-//     border-bottom: 2px solid transparent; 
-//     padding-bottom: 2px; 
-//     transition: border-color 0.2s ease-in-out;
-//     align-self: flex-end;
-//     margin-top: 2rem;
-// }
-
-// .home-main__patchnotes-link:hover {
-//     border-bottom: 2px solid #ffffff; 
-// }
-
-// Hide horizontal scrollbar
-
-// .home-main__patchnote-list {
-//     scrollbar-width: none;
-//     -ms-overflow-style: none;
-// }
-
-// .home-main__patchnote-list::-webkit-scrollbar {
-//     display: none;
-// }
-
-// @media (max-width:1024px) {
-
-//     .home-main {
-//         text-align: center;
-//         margin-bottom: 1rem;
-//     }
-
-//     .home-main__title {
-//         font-size: 2rem;  /* Réduction de la taille du titre */
-//         margin-bottom: 1rem; /* Ajuster l'espacement sous le titre */
-//     }
-
-//     .home-main__patchnote-list {
-//         margin: 0 auto; /* Centre horizontalement */
-//     }
-
-//     .home-main__patchnote-card {
-//         position: relative;
-//         max-width: 300px;
-//         height: auto;
-//     }
-
-//     .home-main__patchnote-image {
-//         width: 100%;  /* Images s'adaptent à la largeur de leur conteneur */
-//         height: auto;  /* Maintenir l'aspect de l'image */
-//     }
-
-//     .home-main__patchnotes-link {
-//         font-size: 1.2rem;  /* Réduire la taille de la police du lien */
-//         align-self: center;  /* Centrer le lien en bas sur les tablettes */
-//         margin-top: 2rem;  /* Ajouter un espacement au-dessus du lien */
-//     }
-
-// }
-
-// @media (max-width: 768px) {
-
-//     .home-main__patchnote-card {
-//         position: relative;
-//         max-width: 12.5rem;
-//         min-height: 7.625rem;
-//     }
-
-//     .home-main__patchnote-title {
-//         padding: 0;
-//     }
-
-// }
-
-// @media (max-width:576px) {
-
-//     .home-main__patchnote-list {
-
-//         display: flex;
-//         flex-direction: row;
-
-//         gap: 3rem;
-
-//         overflow-x: scroll;
-//         scroll-snap-type: x mandatory;
-//     }
-
-//     .home-main__patchnote-card {
-//         flex: 0 0 auto; /* Assurez-vous que les éléments sont de taille fixe */
-//         width: 100%; /* Ajustez la largeur des cartes à 80% de la largeur du conteneur */
-//         max-width: 12.5rem; /* Limite la largeur maximale des cartes */
-//         min-width: 12.5rem; /* Limite la largeur minimale des cartes */
-//         min-height: 7.625rem;
-//         scroll-snap-align: center; /* Centrage des éléments dans le défilement */
-//     }
-
-//     .home-main__patchnote-image {
-//         width: 100%;  /* Adapter les images à la largeur du conteneur */
-//         height: auto;  /* Maintenir le ratio de l'image */
-//     }
-// }
