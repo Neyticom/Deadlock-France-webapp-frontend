@@ -1,4 +1,9 @@
-@use './assets/fonts/fonts.scss';
+@font-face {
+  font-family: 'Troika';
+  src: url('./assets/fonts/Colus-Regular.woff') format('opentype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Akatab:wght@400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
