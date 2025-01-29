@@ -1,17 +1,85 @@
 .patchnotes-reader{
+    max-height: 60%;
+    width: 75%;
     display: flex;
-    padding-left: 60px;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
-.patchnote_title{
+.patchnotes-reader_button {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: fit-content;
+    width: 20%;
+    background: transparent;
+    border: none;
+    
 }
+
+.patchnotes-reader_button img{
+    max-width: 20%;
+    
+    
+}
+
+.patchnotes-reader_button--left img{
+    transform: rotate(180deg);
+}
+
 
 .patchnotes-reader_content{
+    display: flex;
+    flex-direction: column;
     font-family: 'Akatab';
-    overflow-y: scroll;
-    margin-right: 150px;
-    padding-left: 65px;
+    max-width: auto;
+    padding: 1rem;
+    margin: 0 auto;
     text-align: left;
     scrollbar-width: none;
     user-select: text;
+    justify-content: flex start;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+
+.patchnote-reader_image {
+    align-self: center;
+    max-width: 80%;
+    height: auto;
+}
+
+@media (max-width: 1024px) {
+    .patchnotes-reader {
+        flex-grow: 0;
+    }
+    .patchnotes-reader_content {
+        height: inherit;
+        overflow: auto;
+
+    }
+
+    .patchnote-reader_image {
+        padding: 0;
+        width: inherit;
+    }
+}
+
+@media (max-width: 768px) {
+    .patchnotes-reader {
+        width: auto;
+    }
+
+
+    .patchnote-reader_image {
+        align-self: center;
+        max-width: 100%;
+        height: auto;
+    }
+
+}
+
+@media (max-width: 576px) {
+
 }

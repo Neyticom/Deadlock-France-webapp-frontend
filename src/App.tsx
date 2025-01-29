@@ -12,7 +12,6 @@ const App = () => {
         {/* Admin routes */}
         <Route path="/admin" element={
           <>
-
           </>
         }/>
 
@@ -29,7 +28,7 @@ const App = () => {
               }/>
               {/* Patchnotes Page */}
               <Route
-                path="/patchnotes"
+                path="/patchnotes/*"
                 element={
                     <PatchnotesPage />
               }/>
