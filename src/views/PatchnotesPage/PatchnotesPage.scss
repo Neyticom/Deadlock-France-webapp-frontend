@@ -1,25 +1,79 @@
 .patchnotes-page {
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.25rem;
+    color: #fff;
 }
 
 .patchnotes-page_content{
+    width: 100%; /* Largeur maximale de la zone de contenu */
     display: flex;
-    justify-content: flex-start;
-    padding-inline: 200px;
-    overflow-y: hidden;
+    flex-direction: column; /* Empile les composants (selector et reader) verticalement */
+    align-items: center;
+    gap: 1.25rem;
+    overflow-y: hidden; /* Espacement entre les sections */
 }
 
 .patchnotes-page_title {
-    margin-left: 610px;
-    display: flex;
-    justify-content: left;
-    padding-left: 180px;
-    margin-bottom: 50px;
-    white-space: nowrap;
-    letter-spacing: 0.1rem;
+    font-size: 2rem;
     font-weight: 500;
-    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    white-space: nowrap; /* Empêche le texte de se couper */
+}
+
+.patchnotes-page_search-bar_container {
+    width: 100%;
+    height: 6%;
+}
+
+.patchnotes-page_search-bar {
+    width: 30%;
+    height: 100%;
+}
+
+@media (max-width: 1024px) {
+    .patchnotes-page {
+        overflow-y: hidden;
+        max-height: 100vh;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+    
+    .patchnotes-page_content {
+        height: fit-content;
+        box-sizing: border-box;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+    .patchnotes-page_content {
+        gap: 1rem;
+    }
+
+    .patchnotes-page_title {
+        font-size: 1.5rem;
+        max-width: 100%;
+    }
+
+    .patchnotes-page_search-bar_container {
+        width: 100%;
+        height: 5%;
+    }
+    
+    .patchnotes-page_search-bar {
+        width: 80%;
+        height: 100%;
+    }
+    
 }

@@ -78,7 +78,8 @@ const ScrollBar = ({ size, onScroll, scrollPosition }: ScrollbarProps) => {
     };
 
     return (
-        <div
+        // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+<div
             className={`custom-scrollbar custom-scrollbar-size-${size}`}
             ref={scrollbarRef}
             onClick={handleScrollbarClick}

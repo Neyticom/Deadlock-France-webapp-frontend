@@ -1,76 +1,191 @@
 .patchnotes-selector {
+    overflow-x: auto;
     display: flex;
-    position: relative;
-    margin-bottom: 50px;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+    width: 90%;
 }
 
 .patchnotes-selector_list {
-    overflow-y: scroll;
-    scrollbar-width: none;
-    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    overflow-x: scroll; /* Scroll horizontal activé uniquement ici */
+    overflow-y: hidden; /* Pas de scroll vertical */
+    gap: 1rem;
+    padding: 0.625rem;
+    width: 100%;
 }
 
 .patchnotes-selector_option,
 .patchnotes-selector_active-option {
+    display: inline-block;
     font-weight: 400;
     letter-spacing: 1.82px;
-    padding-block: 17px;
+    text-align: center;
     font-size: 14px;
-    padding-inline: 100px;
     position: relative;
-    white-space: nowrap;
+    white-space: normal;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    z-index: 1;
 }
 
-.patchnotes-selector_option-separator {
-    height: 2px;
-    width: 95px;
-    background-color: #ffffff;
-    display: inline-block;
-    margin-inline: auto;
+.patchnotes-selector_option:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
 }
 
-.patchnotes-selector_option:hover::before,
-.patchnotes-selector_option:hover::after {
-    content: '';
+.patchnotes-selector_image {
+    width: 6.25rem; /* Taille des images */
+    height: 6.25rem;
+    object-fit: cover; /* Coupe ou adapte les images pour bien remplir le cadre */
+    border-radius: 8px; /* Bords arrondis pour les images */
+    margin-bottom: 10px; /* Espacement avec le texte en dessous */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre portée pour le design */
+}
+
+.patchnotes-selector_info {
+    height: 60%;
+    text-align: center;
     position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: white;
-    border-radius: 50%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    color: #fff;
+    font-size: 1.2rem; /* Taille du texte */
+    font-weight: bold;
+    text-align: center; /* Centre les textes sous les images */
 }
 
-.patchnotes-selector_option:hover::before {
-    left: 78px;
-    top: 50%;
-    transform: translateY(-50%);
+.patchnotes-selector_version {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.patchnotes-selector_option:hover::after {
-    right: 78px;
-    top: 50%;
-    transform: translateY(-50%);
+.patchnotes-selector_date {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.patchnotes-selector_active-option {
+    background-color: rgba(255, 255, 255, 0.2); /* Surligne l'option active */
+    border: 2px solid #ffffff;
 }
 
 .patchnotes-selector_active-option::before,
 .patchnotes-selector_active-option::after {
-    content: '';
-    width: 1px;
-    height: 1px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 12px solid #ffffff;
-    background-color: transparent;
-    position: absolute;
+    display: none; /* Suppression des flèches pour l'option active */
 }
 
-.patchnotes-selector_active-option::before {
-    left: 80px;
-    top: 50%;
-    transform: translateY(-50%) rotate(90deg);
+@media (max-width: 1024px) {
+    
 }
 
-.patchnotes-selector_active-option::after {
-    right: 80px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-90deg);
+@media (max-width: 768px) {
+   
+
+
 }
+
+@media (max-width: 576px) {
+
+    .patchnotes-selector {
+        flex-direction: column; /* Empilement vertical */
+        align-items: center; /* Centre les éléments */
+    }
+
+    .patchnotes-selector_list {
+        align-items: center;
+        flex-direction: column; /* Une seule colonne */
+        flex-wrap: nowrap; /* Pas de retour à la ligne */
+        justify-content: flex-start; /* Centrer les vignettes */
+        gap: 1.5rem; /* Espacement entre les vignettes */
+        overflow-y: auto; /* Scroll vertical si nécessaire */
+        width: 100%; /* Prend toute la largeur disponible */
+    }
+
+    .patchnotes-selector_option,
+    .patchnotes-selector_active-option {
+        width: 100%; /* Les vignettes occupent presque toute la largeur */
+        max-width: 20rem; /* Taille maximale pour les grandes résolutions */
+        max-height: 13.3rem;
+        text-align: center; /* Centrage du texte */
+    }
+
+    .patchnotes-selector_image {
+        width: 100%; /* Largeur de l'image calée sur le conteneur */
+        height: 13rem; /* Proportions respectées */
+        margin-bottom: 0.75rem; /* Espacement ajusté entre l'image et le texte */
+        margin: 0;
+    }
+
+    .patchnotes-selector_info {
+        height: 30%;
+        margin-bottom: 0.15rem;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+}
+
+/* Cacher les scrollbars natives */
+// .patchnotes-selector_list::-webkit-scrollbar {
+//     display: none;
+// }
+
+// .patchnotes-selector_option-separator {
+//     height: 2px;
+//     width: 95px;
+//     background-color: #ffffff;
+//     display: inline-block;
+//     margin-inline: auto;
+// }
+
+// .patchnotes-selector_option:hover::before,
+// .patchnotes-selector_option:hover::after {
+//     content: '';
+//     position: absolute;
+//     width: 8px;
+//     height: 8px;
+//     background-color: white;
+//     border-radius: 50%;
+// }
+
+// .patchnotes-selector_option:hover::before {
+//     left: 78px;
+//     top: 50%;
+//     transform: translateY(-50%);
+// }
+
+// .patchnotes-selector_option:hover::after {
+//     right: 78px;
+//     top: 50%;
+//     transform: translateY(-50%);
+// }
+
+// .patchnotes-selector_active-option::before,
+// .patchnotes-selector_active-option::after {
+//     content: '';
+//     width: 1px;
+//     height: 1px;
+//     border-left: 6px solid transparent;
+//     border-right: 6px solid transparent;
+//     border-bottom: 12px solid #ffffff;
+//     background-color: transparent;
+//     position: absolute;
+// }
+
+// .patchnotes-selector_active-option::before {
+//     left: 80px;
+//     top: 50%;
+//     transform: translateY(-50%) rotate(90deg);
+// }
+
+// .patchnotes-selector_active-option::after {
+//     right: 80px;
+//     top: 50%;
+//     transform: translateY(-50%) rotate(-90deg);
+// }
