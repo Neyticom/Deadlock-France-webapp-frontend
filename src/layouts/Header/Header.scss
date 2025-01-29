@@ -1,192 +1,206 @@
 .header {
-    padding-block: 2rem;
-    top: 0;
-    padding-inline: 6.25rem;
-    left: 0;
-    width: 100%;
-    position: relative;
-}
-    .nav-desktop {
-        .nav-list {
-            display: flex;
-            gap: 4.563rem;
-            align-items: center;
-            justify-content: space-between;
-
-            .nav-link {
-                color: #ffffff;
-                position: relative;
-                font-size: 20px;
-                font-weight: 400;
-                letter-spacing: 0.05rem;
-                display: flex;
-                &:hover{
-                    color: #47CF73;
-                }
-            }
-    }
-
-    .nav {
-        .nav-list {
-            display: flex;
-            gap: 4.563rem;
-            align-items: center;
-            justify-content: space-between;
-
-            .nav-link {
-                color: #ffffff;
-                position: relative;
-                font-size: 20px;
-                font-weight: 400;
-                letter-spacing: 0.05rem;
-                display: flex;
-                &:hover{
-                    color: #47CF73;
-                }
-            }
-
-            .active:hover{
-                color: #ffffff;
-            }
-
-            .active::after {
-                content: '';
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: -0.625rem;
-                height: 0.188rem;
-                background-color: white;
-                width: 2.875rem;
-                padding: 0 auto;
-            }
-        }
-    }
+    background-color: #000000d0;
+    padding-block: 0.6rem;
 }
 
-.header-logo {
-    width: 3.75rem;
-}
+// Socials
 
-.logo-container {
+.header__social-nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .logo-title {
-    font-size: 1rem; 
-    font-weight: bold; 
-    margin-top: 0.5rem; 
-    text-align: center;
-    color: #fff; 
-  }
-
-// .hidden {
-//     opacity: 0;
-// }
-
-.social-medias {
-    margin-left: auto;
-    display: flex;
-    gap: 2.25rem;
+    justify-content: center;
+    gap: 2.5rem;
 }
 
-.social-media {
-    width: 2.5rem;
+.header__social-icon {
+    width: 2rem;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(195deg) brightness(106%) contrast(101%); // = #ffffff
+
     &:hover {
         filter: invert(68%) sepia(57%) saturate(471%) hue-rotate(86deg) brightness(91%) contrast(89%); // = #47CF73
     }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 350px) {
 
-    /* Adaptation du header */
     .header {
-        padding-inline: 2rem;
-        padding-top: 0.5rem; /* Réduction des marges */
+        padding-block: 0.8rem;
     }
 
-    /* Réduction de l'espace entre les éléments de navigation */
-    .nav .nav-list {
-        gap: 0.5rem
+    .header__social-nav {
+        gap: 3.5rem;
     }
 
-    /* Réduction de la taille de la police des liens */
-    .nav-link {
-        font-size: 1.2rem; /* Diminution de la taille de la police pour la tablette */
+    .header__social-icon {
+        width: 2.3rem;
     }
 
-    /* Modification de la largeur du logo */
-    .header-logo {
-        width: 2,8rem; /* Logo un peu plus petit sur tablette */
-        margin-top: 3rem;
-    }
-
-    /* Ajustement de la taille de la police du titre */
-    .logo-title {
-        font-size: 0.875rem; /* Police réduite pour la tablette */
-    }
-
-    /* Disposition des icônes des réseaux sociaux */
-    .social-medias {
-        gap: 1.5rem; /* Moins d'espace entre les icônes */
-    }
-
-    /* Réduction de la taille des icônes sociales */
-    .social-media {
-        width: 2rem; /* Icônes un peu plus petites */
-    }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 576px) { // Smartphones
 
-    /* Ajustement de la disposition des éléments sur les très petites tablettes */
+    // Socials
+
     .header {
-        padding-inline: 1.5rem; /* Réduction des marges */
-        padding-bottom: 1rem;
+        padding-block: 1rem;
     }
 
-    /* Disposition des éléments de navigation : Empilement vertical */
-    .nav .nav-list {
-        gap: 1.5rem; /* Espacement réduit */
-        text-align: center; /* Centrer les liens de navigation */
+    .header__social-nav {
+        gap: 5rem;
     }
 
-    /* Réduction de la taille des liens */
-    .nav-link {
-        font-size: 1rem; /* Réduction de la taille de la police */
+    .header__social-icon {
+        width: 2.8rem;
     }
 
-    /* Taille du logo */
-    .header-logo {
-        width: 2.5rem; /* Plus petit logo pour les petites tablettes */
-        margin-top: 1rem;
-    }
-
-    /* Modification de la taille du titre du logo */
-    .logo-title {
-        font-size: 0.75rem; /* Plus petite police */
-    }
-
-    /* Ajustement des icônes sociales */
-    .social-medias {
-        gap: 1rem; /* Réduction de l'écart entre les icônes */
-    }
-
-    /* Réduction des tailles des icônes */
-    .social-media {
-        width: 1.8rem; /* Icônes encore plus petites */
-    }
 }
 
-@media (max-width: 576px) {
-    .nav-list {
+@media (min-width: 767px) { // Tablets
+
+    .header {
+        background-color: transparent;
         display: flex;
+        align-items: center;
+        padding: 2.2rem 4rem;
+        gap: 4.5rem;
     }
 
-    .social-medias {
-        align-items: center;
+    // Navigation
+
+    .header__nav-list {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    .header__nav-link, .header__nav-link--active {
+        position: relative;
+        font-size: 1.3rem;
+        letter-spacing: 0.05rem;
+
+        &:hover {
+            color: #47CF73;
+        } 
+    }
+
+    .header__nav-link--active{
+
+        &:hover {
+            color: #ffffff;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -0.65rem;
+            height: 0.15rem;
+            background-color: #ffffff;
+            width: 2.6rem;
+        }
+    }
+
+    // Logo
+
+    .header__logo-link {
+        align-self: flex-end;
+    }
+
+    .header__logo {
+        width: 3.5rem;
+    }
+    
+    .header__logo-title {
+        font-size: 1.1rem;
+        font-weight: 200;
+        margin-top: 0.2rem;
+        letter-spacing: 0.03rem;
+    }
+
+    // Socials
+
+    .header__social-nav {
+        gap: 2.5rem;
+        margin-left: auto;
+    }
+
+    .header__social-icon {
+        width: 2.5rem;
+    }
+
+}
+
+@media (min-width: 992px) { // Laptops
+
+    .header {
+        padding-inline: 5rem;
+        gap: 5rem;
+    }
+
+    // Navigation
+
+    .header__nav-list {
+        gap: 2.8rem;
+    }
+
+}
+
+@media (min-width: 1200px) { // Desktops
+
+    .header {
+        padding-inline: 10rem;
+        gap: 6rem;
+    }
+
+    // Navigation
+
+    .header__nav-list {
+        gap: 3rem;
+    }
+
+    .header__nav-link, .header__nav-link--active {
+        font-size: 1.4rem;
+    }
+
+
+    // Socials
+
+    .header__social-nav {
+        gap: 2.8rem;
+    }
+
+}
+
+@media (min-width: 1400px) { // Monitors
+
+    .header {
+        padding-inline: 11rem;
+        gap: 7rem;
+    }
+
+    // Logo
+
+    .header__logo {
+        width: 3.8rem;
+    }
+
+    .header__logo-title {
+        font-size: 1.3rem;
+    }
+
+    // Navigation
+
+    .header__nav-list {
+        gap: 4rem;
+    }
+
+    .header__nav-link--active::after {
+        height: 0.2rem;
+        width: 3.2rem;
+    }
+
+    // Socials  
+
+    .header__social-icon {
+        width: 2.7rem;
     }
 }
