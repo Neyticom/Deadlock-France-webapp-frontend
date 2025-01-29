@@ -7,7 +7,8 @@ const DonateButton: React.FC = () => {
     };
 
     return (
-        <button className="donate-button" onClick={handleDonateClick}>
+        // biome-ignore lint/a11y/useButtonType: <explanation>
+<button className="donate-button" onClick={handleDonateClick}>
             <span className='donate-button_top'>Soutenir Deadlock</span>
             <span className='donate-button_bottom'>France ❤️</span>
         </button>

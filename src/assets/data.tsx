@@ -1,4 +1,4 @@
-export const patchnotes: { id: number; version: string; date: string; title: string; content: string }[] = [
+export const patchnotes: { id: number; version: string; date: string; title: string; content: string; image?: string; }[] = [
 {
     id: 1,
     version: '2.3.1',
@@ -18,7 +18,8 @@ export const patchnotes: { id: number; version: string; date: string; title: str
 
 **Corrections de bugs :**
 - Résolution du problème d'impact sismique sur la carte "Montagne des Titans".
-`
+`,
+    image: 'src/assets/images/deadlock-test-patch-1.jpg'
 },
 {
     id: 2,
@@ -39,7 +40,8 @@ export const patchnotes: { id: number; version: string; date: string; title: str
 
 **Corrections de bugs :**
 - Problèmes visuels avec les effets de transparence corrigés sur plusieurs objets.
-`
+`,
+    image: 'src/assets/images/deadlock-test-patch-2.jpg'
 },
 {
     id: 3,
@@ -64,7 +66,8 @@ export const patchnotes: { id: number; version: string; date: string; title: str
 sdfsdfsdf
 
 sdfsdfsdfsdfEesdfsdfsdfsdjfghljskdfgsfdmjkfglhsdfgmlghksdfgoigimsùdlfkghopqe drimlgijqdfspigqdmfgqqdfgolqdfughqdùepflioghqd FOGUPJQDFôhgujqdsurpp fgjqdsfuohgqjsdfssdfg dfshgzrtgsdfpoighdflghjfqsfwpgdiouhdsfqomklgsduiguSHGBUIPOFMQSDUKGLHJOJFDGBHMQUJSFKHJLGU
-`
+`,
+    image:'src/assets/images/deadlock-test-patch-3.jpg'
 },
 {
     id: 4,

@@ -1,6 +1,113 @@
 .footer {
-    padding-block: 45px;
-    padding-inline: 55px;
+    background-color: #000000d0;
+    padding-block: 0.8rem;
+}
+
+// Navigation
+
+.footer__nav-list {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
+}
+
+.footer__nav-link, .footer__nav-link--active {
+    position: relative;
+} 
+
+.footer__nav-link:hover {
+    color: #47CF73;
+}
+
+.footer__nav-link--active:hover {
+    color: #ffffff;
+}
+
+.footer__nav-link--active::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.35rem;
+    height: 0.07rem;
+    background-color: #ffffff;
+    width: 1.5rem;
+}
+
+.footer__nav-link:hover::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.35rem;
+    height: 0.25rem;
+    background-color: #47CF73;
+    width: 0.25rem;
+    border-radius: 5rem;
+}
+
+.footer__nav-text, .footer__nav-text--active {
+    font-size: 0.8rem;
+    letter-spacing: 0.01rem;
+}
+
+.footer__nav-icon, .footer__nav-icon--active {
+    width: 1.1rem;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(195deg) brightness(106%) contrast(101%); // = #ffffff
+}
+
+.footer__nav-link:hover .footer__nav-icon {
+    filter: invert(68%) sepia(57%) saturate(471%) hue-rotate(86deg) brightness(91%) contrast(89%); // = #47CF73;
+}
+
+@media (min-width: 350px) {
+
+    .footer {
+        padding-block: 1rem;
+    }
+
+    .footer__nav-link--active::after {
+        height: 0.1rem;
+        width: 2rem;
+    }
+
+    .footer__nav-text, .footer__nav-text--active {
+        font-size: 0.9rem;
+    }
+
+    .footer__nav-icon, .footer__nav-icon--active {
+        width: 1.6rem;
+    }
+
+}
+
+@media (min-width: 576px) { // Smartphones
+
+    .footer {
+        padding-block: 1.2rem;
+    }
+
+    .footer__nav-list {
+        justify-content: center;
+        gap: 9rem;
+    }
+
+    .footer__nav-link--active::after {
+        width: 2.8rem;
+    }
+
+    .footer__nav-text, .footer__nav-text--active {
+        font-size: 1rem;
+        margin-block: 0.1rem;
+    }
+
+    .footer__nav-icon, .footer__nav-icon--active {
+        width: 1.8rem;
+    }
+
+}
+
+@media (min-width: 767px) { // Tablets
+    .footer {
+        display: none;
+    }
 }
