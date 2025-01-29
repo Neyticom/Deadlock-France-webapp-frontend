@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
@@ -6,34 +6,44 @@ import Logo from '/src/assets/icons/logo.png';
 import DiscordIcon from '/src/assets/icons/discord.svg';
 import XIcon from '/src/assets/icons/twitter-alt.svg';
 
-const Header: React.FC = () => {
+const Header = () => {
 
-    const [activePage, setActivePage] = useState(window.location.pathname);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
+        const handleResize  = (event: MediaQueryListEvent | MediaQueryList) => {
+            setIsMobile(event.matches);
+        };
+
+        handleResize(mediaQuery);
+        mediaQuery.addEventListener('change', handleResize);
+
+        return () => mediaQuery.removeEventListener('change', handleResize);
+    }, []);
+
+    const [activePage, setActivePage] = useState(window.location.pathname.split('/')[1]);
 
     const changePage = () => {
         setTimeout(() => {
-            setActivePage(window.location.pathname);
+            setActivePage(window.location.pathname.split('/')[1]);
         });
     }
 
     return (
         <header className="header">
-            <nav className="nav">
-                <ul className="nav-list">
-                    <li>
-                        <Link to="/" onClick={changePage} className='nav-link'><img src={Logo} alt="Logo Deadlock France" className={activePage === '/' ? 'hidden header-logo' : 'header-logo'} /></Link>
-                    </li>
-                    <li>
-                        <Link to="/" onClick={changePage} className={activePage === '/' ? 'active nav-link' : 'nav-link'}>Accueil</Link>
-                    </li>
-                    <li>
-                        <Link to="/patchnotes" onClick={changePage} className={activePage === '/patchnotes' ? 'active nav-link' : 'nav-link'}>Patchnotes</Link>
-                    </li>
-                    <li className='social-medias'>
-                        <Link to="http://google.com" target="_blank" className='social-link'><img src={DiscordIcon} alt="Discord DeadLock France" className="social-media" /></Link>
-                        <Link to="http://google.com" target="_blank" className='social-link'><img src={XIcon} alt="X(Twitter) DeadLock France" className="social-media" /></Link>
-                    </li>
-                </ul>
+            {!isMobile && (
+                <>
+                    <Link to="/" onClick={changePage} className='header__logo-link'><img src={Logo} alt="Logo Deadlock France" className='header__logo' /><h1 className='header__logo-title'>Deadlock<br/>France</h1></Link>
+                    <nav className="header__nav-list">
+                        <Link to="/" onClick={changePage} className={activePage === '' ? 'header__nav-link--active' : 'header__nav-link'}>Accueil</Link>
+                        <Link to="/patchnotes" onClick={changePage} className={activePage === 'patchnotes' ? 'header__nav-link--active' : 'header__nav-link'}>Patchnotes</Link>
+                    </nav>
+                </>
+            )}
+            <nav className="header__social-nav">
+                <Link to="http://google.com" target="_blank" className='header__social-link'><img src={DiscordIcon} alt="Discord DeadLock France" className="header__social-icon" /></Link>
+                <Link to="http://google.com" target="_blank" className='header__social-link'><img src={XIcon} alt="X(Twitter) DeadLock France" className="header__social-icon" /></Link>
             </nav>
         </header>
     );

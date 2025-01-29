@@ -1,65 +1,207 @@
 .header {
-    padding-block: 60px;
-    top: 0;
-    padding-inline: 120px;
-    left: 0;
-    width: 100%;
-
-    .nav {
-        .nav-list {
-            display: flex;
-            gap: 73px;
-            align-items: center;
-
-            .nav-link {
-                color: #ffffff;
-                position: relative;
-                font-size: 20px;
-                font-weight: 400;
-                letter-spacing: 0.8px;
-                display: flex;
-                &:hover{
-                    color: #47CF73;
-                }
-            }
-
-            .active:hover{
-                color: #ffffff;
-            }
-
-            .active::after {
-                content: '';
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: -10px;
-                height: 3px;
-                background-color: white;
-                width: 46px;
-                padding: 0 auto;
-            }
-        }
-    }
+    background-color: #000000d0;
+    padding-block: 0.6rem;
 }
 
-.header-logo {
-    width: 60px;
-}
+// Socials
 
-.hidden {
-    opacity: 0;
-}
-
-.social-medias {
-    margin-left: auto;
+.header__social-nav {
     display: flex;
-    gap: 36px;
+    justify-content: center;
+    gap: 2.5rem;
 }
 
-.social-media {
-    width: 40px;
+.header__social-icon {
+    width: 2rem;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(195deg) brightness(106%) contrast(101%); // = #ffffff
+
     &:hover {
         filter: invert(68%) sepia(57%) saturate(471%) hue-rotate(86deg) brightness(91%) contrast(89%); // = #47CF73
     }
+}
+
+@media (min-width: 350px) {
+
+    .header {
+        padding-block: 0.8rem;
+    }
+
+    .header__social-nav {
+        gap: 3.5rem;
+    }
+
+    .header__social-icon {
+        width: 2.3rem;
+    }
+
+}
+
+@media (min-width: 576px) { // Smartphones
+
+    // Socials
+
+    .header {
+        padding-block: 1rem;
+    }
+
+    .header__social-nav {
+        gap: 5rem;
+    }
+
+    .header__social-icon {
+        width: 2.8rem;
+    }
+
+}
+
+@media (min-width: 767px) { // Tablets
+
+    .header {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        padding: 2.2rem 4rem;
+        gap: 4.5rem;
+    }
+
+    // Navigation
+
+    .header__nav-list {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    .header__nav-link, .header__nav-link--active {
+        position: relative;
+        font-size: 1.3rem;
+        letter-spacing: 0.05rem;
+
+        &:hover {
+            color: #47CF73;
+        } 
+    }
+
+    .header__nav-link--active{
+
+        &:hover {
+            color: #ffffff;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -0.65rem;
+            height: 0.15rem;
+            background-color: #ffffff;
+            width: 2.6rem;
+        }
+    }
+
+    // Logo
+
+    .header__logo-link {
+        align-self: flex-end;
+    }
+
+    .header__logo {
+        width: 3.5rem;
+    }
+    
+    .header__logo-title {
+        font-size: 1.1rem;
+        font-weight: 200;
+        margin-top: 0.2rem;
+        letter-spacing: 0.03rem;
+    }
+
+    // Socials
+
+    .header__social-nav {
+        gap: 2.5rem;
+        margin-left: auto;
+    }
+
+    .header__social-icon {
+        width: 2.5rem;
+    }
+
+}
+
+@media (min-width: 992px) { // Laptops
+
+    .header {
+        padding-inline: 5rem;
+        gap: 5rem;
+    }
+
+    // Navigation
+
+    .header__nav-list {
+        gap: 2.8rem;
+    }
+
+}
+
+@media (min-width: 1200px) { // Desktops
+
+    .header {
+        padding-inline: 10rem;
+        gap: 6rem;
+    }
+
+    // Navigation
+
+    .header__nav-list {
+        gap: 3rem;
+    }
+
+    .header__nav-link, .header__nav-link--active {
+        font-size: 1.4rem;
+    }
+
+
+    // Socials
+
+    .header__social-nav {
+        gap: 2.8rem;
+    }
+
+}
+
+@media (min-width: 1400px) { // Monitors
+
+    .header {
+        padding-inline: 11rem;
+        gap: 7rem;
+    }
+
+    // Logo
+
+    .header__logo {
+        width: 3.8rem;
+    }
+
+    .header__logo-title {
+        font-size: 1.3rem;
+    }
+
+    // Navigation
+
+    .header__nav-list {
+        gap: 4rem;
+    }
+
+    .header__nav-link--active::after {
+        height: 0.2rem;
+        width: 3.2rem;
+    }
+
+    // Socials  
+
+    .header__social-icon {
+        width: 2.7rem;
+    }
+
 }
