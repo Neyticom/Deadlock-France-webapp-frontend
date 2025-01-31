@@ -1,4 +1,6 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 // import ScrollBar from '../ScrollBar/ScrollBar';
 import './PatchnotesSelector.scss';
 import type { IPatchnote } from '../../@types';
@@ -14,6 +16,8 @@ function PatchnotesSelector ({patchnotes, activePatchnote, handleSelectedPatchno
     // Permet de récupérer et modifier l'état du scroll en % entre 0 et 100;
 
     const listRef = useRef<HTMLUListElement>(null);
+
+    const navigate = useNavigate();
 
     // Synchronise la position de la scrollbar avec la position de la fenêtre navigable
     // const syncScrollBar = () => {
@@ -57,28 +61,22 @@ function PatchnotesSelector ({patchnotes, activePatchnote, handleSelectedPatchno
         <div className="patchnotes-selector">
             <ul ref={listRef} className='patchnotes-selector_list'>
                 {patchnotes.map(patchnote => (
-                    
-                    // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-<li 
+                    <li 
                     key={patchnote.id}
-                    onClick={() => handleSelectedPatchnote(patchnote.id)}
+                    onClick={() => navigate(`/patchnotes/${patchnote.id}`)}
                     className={patchnote.id === activePatchnote ? 'patchnotes-selector_active-option' : 'patchnotes-selector_option'} 
                     data-patchnote-id={patchnote.id}
-                >
-                    <img 
-                        src={`${patchnote.image}`} 
-                        alt={`Patchnote ${patchnote.version}`} 
-                        className='patchnotes-selector_image' 
-                    />
-                    <div className='patchnotes-selector_info'>
-                        {/* biome-ignore lint/style/useTemplate: <explanation> */}
-                        <span className='patchnotes-selector_version'>{"v" + patchnote.version}</span>
-                        <span className='patchnotes-selector_date'>{patchnote.date}</span>
-                    </div>
-                </li>
-            ))}
+                    >
+                        <img 
+                            src={`${patchnote.image}`} 
+                            alt={`Patchnote ${patchnote.version}`} 
+                            className='patchnotes-selector_image' 
+                        />
+                        <p className='patchnotes-selector_version'>{patchnote.title}</p>
+                        <p className='patchnotes-selector_date'>{patchnote.date}</p>
+                    </li>
+                ))}
             </ul>
-            {/* <ScrollBar size={1} onScroll={handleScroll} scrollPosition={scrollPosition} /> */}
         </div>
     );
 };

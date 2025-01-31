@@ -12,7 +12,7 @@ const PatchnotesPage = () => {
     const [isMobile, setIsMobile] = useState(true);
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(max-width: 576px)');
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
         const handleResize  = (event: MediaQueryListEvent | MediaQueryList) => {
             setIsMobile(event.matches);
         };
@@ -54,12 +54,10 @@ const PatchnotesPage = () => {
                         <Header />
                         <main className='patchnotes-page_content'>
                             {isMobile && (
-                                <h1 className='patchnotes-page_main-title-mobile'>Patchnotes</h1>
+                                <h1 className='patchnotes-page_title'>Mises à jour</h1>
                             )}
                             
-                            <div className='patchnotes-page_search-bar_container'>
-                                <input type="text" placeholder="Rechercher un Patchnote" className="patchnotes-page_search-bar" />
-                                </div>
+                            <input type="text" placeholder="Chercher un héros, objet, ..." className="patchnotes-page_search-bar" />
                             
                             <PatchnotesSelector patchnotes={patchnotes} activePatchnote={activePatchnote} handleSelectedPatchnote={handleSelectedPatchnote}/>
                         </main>

@@ -174,7 +174,7 @@ const HomePage = () => {
                 <h2 className="home-main__title">Dernières mises à jour</h2>
                 <section className="home-main__patchnote-list">
                         {[patchnotes[2], patchnotes[0], patchnotes[1]].map((patchnote, index) => (
-                            <Link to={`/patchnotes?id=${patchnote.id}`} key={patchnote.id} className={`home-main__patchnote-card ${index === 1 ? 'selected' : ''}`}>
+                            <Link to={`/patchnotes/${patchnote.id}`} key={patchnote.id} className={`home-main__patchnote-card ${index === 1 ? 'selected' : ''}`}>
                                     <img src={patchnote.image} alt={patchnote.title} className="home-main__patchnote-image" />
                                     <p className="home-main__patchnote-title">{patchnote.title}</p>
                             </Link>
