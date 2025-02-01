@@ -1,11 +1,11 @@
-.patchnotes-page {
+.patchnote-page {
     width: 100%;
     height: 100vh;
     align-items: center;
     overflow: hidden
 }
 
-.patchnotes-page_content{
+.patchnote-main {
     overflow-y: scroll;
     height: 100%;
     width: 100%;
@@ -17,27 +17,17 @@
     }
 }
 
-.patchnotes-page_title {
+.patchnote-main__title {
     font-size: 1.6rem;
     font-weight: 500;
     letter-spacing: 0.01rem;
     margin-block: 2rem 1.2rem;
 }
 
-.patchnotes-page_search-bar {
-    background-color: rgba(255, 255, 255, 0.945);
-    width: 11rem;
-    height: 2.2rem;
-    border: none;
-    border-radius: 0.8rem;
-    font-family: 'Geist';
-    padding-inline: 1rem;
-    font-weight: 300;
-    font-size: 0.7rem;
-    margin-bottom: 0.4rem;
-    &::placeholder{
-        font-style: italic;
-    }
+.patchnote-main__link-back {
+    display: block;
+    font-size: 0.9rem;
+    margin-block: 1rem;
 }
 
 .footer {
@@ -48,90 +38,37 @@
 }
 
 @media (min-width: 350px) {
-
-    .patchnotes-page_content{
+    .patchnote-main {
         padding-bottom: 10rem;
     }
 
-    .patchnotes-page_title {
+    .patchnote-main__title {
         font-size: 2rem;
     }
 
-    .patchnotes-page_search-bar {
-        width: 17rem;
-        height: 2.8rem;
-        border-radius: 1rem;
-        padding-inline: 1.4rem;
-        font-size: 0.83rem;
+    .patchnote-main__link-back {
+        margin-block: 1.4rem;
     }
 }
 
+@media (min-width: 450px) {
+    .patchnote-main__title {
+        font-size: 2.4rem;
+    }
 
-// .patchnotes-page_content{
-//     width: 100%; /* Largeur maximale de la zone de contenu */
-//     display: flex;
-//     flex-direction: column; /* Empile les composants (selector et reader) verticalement */
-//     align-items: center;
-//     gap: 1.25rem;
-//     overflow-y: hidden; /* Espacement entre les sections */
-// }
+    .patchnote-main__link-back {
+        font-size: 1rem;
+        margin-block: 2rem 1.8rem;
+    }
+}
 
-// .patchnotes-page_title {
-//     font-size: 2rem;
-//     font-weight: 500;
-//     letter-spacing: 0.1rem;
-//     text-align: center;
-//     white-space: nowrap; /* Empêche le texte de se couper */
-// }
+@media (min-width: 576px) {
+    .patchnote-main {
+        padding-bottom: 12rem;
+    }
 
-// .patchnotes-page_search-bar_container {
-//     width: 100%;
-//     height: 6%;
-// }
-
-// .patchnotes-page_search-bar {
-//     width: 30%;
-//     height: 100%;
-// }
-
-// @media (max-width: 1024px) {
-//     .patchnotes-page {
-//         overflow-y: hidden;
-//         max-height: 100vh;
-//         padding: 0;
-//         box-sizing: border-box;
-        
-//     }
-    
-//     .patchnotes-page_content {
-//         height: fit-content;
-//         box-sizing: border-box;
-//     }
-
-// }
-
-// @media (max-width: 768px) {
-
-// }
-
-// @media (max-width: 576px) {
-//     .patchnotes-page_content {
-//         gap: 1rem;
-//     }
-
-//     .patchnotes-page_title {
-//         font-size: 1.5rem;
-//         max-width: 100%;
-//     }
-
-//     .patchnotes-page_search-bar_container {
-//         width: 100%;
-//         height: 5%;
-//     }
-    
-//     .patchnotes-page_search-bar {
-//         width: 80%;
-//         height: 100%;
-//     }
-    
-// }
+    .patchnote-main__link-back {
+        font-size: 1.1rem;
+        margin-block: 2.2rem 2rem;
+    }
+}

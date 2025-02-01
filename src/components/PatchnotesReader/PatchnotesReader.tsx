@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import type { IPatchnote } from "../../@types";
 import { Remark } from "react-remark";
-import ScrollBar from "../ScrollBar/ScrollBar";
+import { Link } from 'react-router-dom';
 import './PatchnotesReader.scss';
 import './Markdown.scss';
 
@@ -17,6 +17,20 @@ interface PatchnotesReaderProps {
 
 export const PatchnotesReader = ({patchnote, handleSelectedPatchnote, activePatchnote}: PatchnotesReaderProps) => {
 
+    const [isMobile, setIsMobile] = useState(false);
+    
+    useEffect(() => { // isMobile
+
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
+        const handleResize  = (event: MediaQueryListEvent | MediaQueryList) => {
+            setIsMobile(event.matches);
+        };
+
+        handleResize(mediaQuery);
+        mediaQuery.addEventListener('change', handleResize);
+
+        return () => mediaQuery.removeEventListener('change', handleResize);
+    }, []);
 
     const [scrollPosition, setScrollPosition] = useState(0);
     // Permet de récupérer et modifier l'état du scroll en % entre 0 et 100;
@@ -74,30 +88,25 @@ export const PatchnotesReader = ({patchnote, handleSelectedPatchnote, activePatc
     };
 
     return(
-            <div className="patchnotes-reader">
-                {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-                <button
-                className="patchnotes-reader_button patchnotes-reader_button--left"
-                onClick={goToPreviousPatchnote}
-                aria-label="Patchnote précédent"
-                disabled={activePatchnote === null || activePatchnote <= 1} // Désactive le bouton si on est au premier patchnote
-            >
-                <img src="/src/assets/images/chevron-double-right.svg" alt="Flèche gauche" />
-            </button>
-                <ScrollBar size={2} onScroll={handleScroll} scrollPosition={scrollPosition} />
-                <div ref={divRef} className="patchnotes-reader_content">
-                    <img src={patchnote.image} alt={`Patchnote ${patchnote.version}`} className="patchnote-reader_image" />
-                    <h2 className="patchnote_title">{`Patchnote v${patchnote.version} - "${patchnote.title}"`}</h2>
-                    <Remark>{patchnote.content}</Remark>
+            <section className="patchnote-reader">
+
+                {!isMobile && (
+                    <Link to={'/patchnotes/' + (activePatchnote ? activePatchnote - 1 : '')} className='patchnote-reader__link--left'>
+                        <img src="/src/assets/images/chevron-double-right.svg" alt="Se rendre à la patchnote précédente" className="patchnote-reader__link-icon--left"/>
+                    </Link>
+                )}
+                <div className="patchnote-reader__card">
+                        <img src={patchnote.image} alt={`Patchnote ${patchnote.version}`} className="patchnote-reader__patchnote-image" />
+                        <h2 className="patchnote-reader__patchnote-title">{patchnote.title}</h2>
                 </div>
-                {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-                <button
-                className="patchnotes-reader_button patchnotes-reader_button--right"
-                onClick={goToNextPatchnote}
-                aria-label="Patchnote suivant"
-            >
-                <img src="/src/assets/images/chevron-double-right.svg" alt="Flèche droite" className="" />
-            </button>
-            </div>
+                <div ref={divRef} className="patchnote-reader__content">
+                    <Remark>{patchnote.content}</Remark> {/* It will be replaced by custom patchnote entries later*/}
+                </div>
+                {!isMobile && (
+                    <Link to={'/patchnotes/' + (activePatchnote ? activePatchnote + 1 : '')} className='patchnote-reader__link--right'>
+                        <img src="/src/assets/images/chevron-double-right.svg" alt="Se rendre à la patchnote suivante" className="patchnote-reader__link-icon--right"/>
+                    </Link>
+                )}
+            </section>
     );
 };

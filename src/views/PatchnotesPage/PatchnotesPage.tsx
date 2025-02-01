@@ -5,7 +5,7 @@ import PatchnotesSelector from '../../components/PatchnotesSelector/PatchnotesSe
 import { patchnotes } from '../../assets/data';
 import './PatchnotesPage.scss';
 import { PatchnotesReader } from '../../components/PatchnotesReader/PatchnotesReader';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation, Link } from 'react-router-dom';
 
 const PatchnotesPage = () => {
 
@@ -47,18 +47,13 @@ const PatchnotesPage = () => {
     }
 
     return (
-        <div className="patchnotes-page">
+        <div className="patchnote-page">
             <Routes>
                 <Route path="/" element={
                     <>
                         <Header />
-                        <main className='patchnotes-page_content'>
-                            {isMobile && (
-                                <h1 className='patchnotes-page_title'>Mises à jour</h1>
-                            )}
-                            
-                            <input type="text" placeholder="Chercher un héros, objet, ..." className="patchnotes-page_search-bar" />
-                            
+                        <main className='patchnote-main'>
+                            <h2 className='patchnote-main__title'>Mises à jour</h2>
                             <PatchnotesSelector patchnotes={patchnotes} activePatchnote={activePatchnote} handleSelectedPatchnote={handleSelectedPatchnote}/>
                         </main>
                         <Footer />
@@ -67,22 +62,17 @@ const PatchnotesPage = () => {
                 <Route path=":params" element={
                     <>
                         <Header />
-                        <main className='patchnotes-page_content'>
-                            {selectedPatchnote ? (
-                                <h1 className='patchnotes-page_title'>{lastestPatchnote === activePatchnote ? `Dernière Patchnote - ${selectedPatchnote.date}` : `Patchnote du ${selectedPatchnote.date}` }</h1>
-                            ) : null}
-
-                            <div className='patchnotes-page_search-bar_container'>
-                                <input type="text" placeholder="Rechercher un Patchnote" className="patchnotes-page_search-bar" />
-                                </div>
-
+                        <main className='patchnote-main'>
+                            {isMobile && (
+                                <Link to='/patchnotes/' className='patchnote-main__link-back'>{'⬅'} Revenir à la liste des patchnotes</Link>
+                            )}
                             {!isMobile && (
                                 <PatchnotesSelector patchnotes={patchnotes} activePatchnote={activePatchnote} handleSelectedPatchnote={handleSelectedPatchnote}/>
                             )}
 
-                            {selectedPatchnote ? (
+                            {selectedPatchnote && (
                                 <PatchnotesReader patchnote={selectedPatchnote} activePatchnote={activePatchnote} handleSelectedPatchnote={handleSelectedPatchnote} />
-                            ) : null}
+                            )}
                         </main>
                         <Footer />
                     </>

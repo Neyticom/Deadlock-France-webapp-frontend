@@ -58,26 +58,27 @@ function PatchnotesSelector ({patchnotes, activePatchnote, handleSelectedPatchno
     // };
 
     return (
-        <div className="patchnotes-selector">
-            <ul ref={listRef} className='patchnotes-selector_list'>
+        <section className="patchnote-selector">
+            <input type="text" placeholder="Chercher un héros, objet, ..." className="patchnote-selector__search-bar" />
+            <ul ref={listRef} className='patchnote-selector__list'>
                 {patchnotes.map(patchnote => (
                     <li 
                     key={patchnote.id}
                     onClick={() => navigate(`/patchnotes/${patchnote.id}`)}
-                    className={patchnote.id === activePatchnote ? 'patchnotes-selector_active-option' : 'patchnotes-selector_option'} 
+                    className={patchnote.id === activePatchnote ? 'patchnote-selector__patchnote--active' : 'patchnote-selector__patchnote'} 
                     data-patchnote-id={patchnote.id}
                     >
                         <img 
                             src={`${patchnote.image}`} 
-                            alt={`Patchnote ${patchnote.version}`} 
-                            className='patchnotes-selector_image' 
+                            alt={`Patchnote "${patchnote.title}" image`} 
+                            className='patchnote-selector__patchnote-image' 
                         />
-                        <p className='patchnotes-selector_version'>{patchnote.title}</p>
-                        <p className='patchnotes-selector_date'>{patchnote.date}</p>
+                        <p className='patchnote-selector__patchnote-title'>{patchnote.title}</p>
+                        <p className='patchnote-selector__patchnote-date'>{patchnote.date}</p>
                     </li>
                 ))}
             </ul>
-        </div>
+        </section>
     );
 };
 
