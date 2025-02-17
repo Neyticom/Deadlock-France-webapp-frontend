@@ -69,7 +69,7 @@ function PatchnotesSelector ({patchnotes, activePatchnote, handleSelectedPatchno
                     data-patchnote-id={patchnote.id}
                     >
                         <img 
-                            src={`${patchnote.image}`} 
+                            src={`${"/src/assets/images/deadlock-test-patch-1.jpg"}`} 
                             alt={`Patchnote "${patchnote.title}" image`} 
                             className='patchnote-selector__patchnote-image' 
                         />

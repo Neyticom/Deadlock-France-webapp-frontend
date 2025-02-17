@@ -5,9 +5,41 @@ import Header from '../../layouts/Header/Header';
 import Footer from '../../layouts/Footer/Footer';
 import DonateButton from '../../components/DonateButton/DonateButton';
 import Logo from '/src/assets/icons/logo.png';
-import { patchnotes } from '../../assets/data';
+import { getPatchnotes } from "../../api/patchnoteApi";
 
+interface Patchnote {
+    id: number;
+    title: string;
+    content: string;
+    author: string;
+    version: string;
+    state: "DRAFT" | "PUBLISHED" | "ARCHIVED";
+    date: string;
+    createdAt: string;
+    updatedAt: string;
+}
+  
 const HomePage = () => {
+
+    const [patchnotes, setPatchnotes] = useState<Patchnote[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchPatchnotes = async () => {
+            try {
+            const data = await getPatchnotes();
+            setPatchnotes(data);
+            } catch (error) {
+            console.log(error);
+            setError("Erreur lors du chargement des patchnotes");
+            } finally {
+            setLoading(false);
+            }
+        };
+
+        fetchPatchnotes();
+    }, []);
 
     const [isMobile, setIsMobile] = useState(false);
     
@@ -29,6 +61,8 @@ const HomePage = () => {
         // Scroll
 
         const patchnotesList = document.querySelector('.home-main__patchnote-list') as HTMLElement;
+
+        if (!patchnotesList) return;
         const patchnoteCards = Array.from(document.querySelectorAll('.home-main__patchnote-card')) as HTMLLinkElement[];
         const currentIndex = 1;
         let isScrolling = false;
@@ -164,6 +198,9 @@ const HomePage = () => {
 
     }, [isMobile]);
 
+    if (loading) return <p>Chargement...</p>;
+    if (error) return <p>{error}</p>;
+
     return (
         <div className="home">
             <Header />
@@ -173,12 +210,13 @@ const HomePage = () => {
                 )}
                 <h2 className="home-main__title">Dernières mises à jour</h2>
                 <section className="home-main__patchnote-list">
-                        {[patchnotes[2], patchnotes[0], patchnotes[1]].map((patchnote, index) => (
-                            <Link to={`/patchnotes/${patchnote.id}`} key={patchnote.id} className={`home-main__patchnote-card ${index === 1 ? 'selected' : ''}`}>
-                                    <img src={patchnote.image} alt={patchnote.title} className="home-main__patchnote-image" />
-                                    <p className="home-main__patchnote-title">{patchnote.title}</p>
-                            </Link>
-                        ))}
+                    {/* [patchnotes[2], patchnotes[0], patchnotes[1] */}
+                    {[patchnotes[0], patchnotes[1]].map((patchnote, index) => (
+                        <Link to={`/patchnotes/${patchnote.id}`} key={patchnote.id} className={`home-main__patchnote-card ${index === 1 ? 'selected' : ''}`}>
+                                <img src={"/src/assets/images/deadlock-test-patch-1.jpg"} alt={patchnote.title} className="home-main__patchnote-image" />
+                                <p className="home-main__patchnote-title">{patchnote.title}</p>
+                        </Link>
+                    ))}
                 </section>
                 <Link to="/patchnotes" className="home-main__patchnotes-link">Voir toutes les mises à jour</Link>
                 <DonateButton />

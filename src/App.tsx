@@ -7,35 +7,18 @@ import PatchnotesPage from './views/PatchnotesPage/PatchnotesPage';
 const App = () => {
   return (
     <div className="app-container">
+      <AnimatedBackground />
       <Routes>
-        
-        {/* Admin routes */}
-        <Route path="/admin" element={
-          <>
-          </>
+        {/* Home Page */}
+        <Route
+          path="/"
+          element={
+              <HomePage />
         }/>
-
-        {/* Public routes */}
-        <Route path="/*" element={
-          <>
-            <AnimatedBackground />
-            <Routes>
-              {/* Home Page */}
-              <Route
-                path="/"
-                element={
-                    <HomePage />
-              }/>
-              {/* Patchnotes Page */}
-              <Route
-                path="/patchnotes/*"
-                element={
-                    <PatchnotesPage />
-              }/>
-            </Routes>
-          </>
-        }/>
-
+        {/* Patchnotes Page */}
+        <Route path="/patchnotes/*" element={<PatchnotesPage />}>
+        <Route path=":id" element={<PatchnotesPage />} />
+        </Route>
       </Routes>
     </div>
   );

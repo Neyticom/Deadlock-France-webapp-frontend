@@ -1,4 +1,4 @@
-# DeadLock France - Frontend
+# DeadLock France - Frontend Public
 
 **[Journal de sprints](docs/devlogs.md)**
 
